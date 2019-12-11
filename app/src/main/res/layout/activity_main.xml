@@ -22,6 +22,7 @@
         android:layout_width="209dp"
         android:layout_height="69dp"
         android:layout_marginBottom="112dp"
+        android:onClick="launchRegister"
         android:text="@string/btnRegistertext"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,14 +45,16 @@
         android:id="@+id/etUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="76dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="64dp"
         android:ems="10"
         android:hint="@string/etUsernamehint"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/etPassword"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleLogin"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/tvPassword"
@@ -76,8 +79,10 @@
         android:textColor="@android:color/black"
         app:layout_constraintBottom_toTopOf="@+id/tvPassword"
         app:layout_constraintEnd_toStartOf="@+id/etUsername"
-        app:layout_constraintHorizontal_bias="0.424"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.465"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleLogin"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/titleLogin"
