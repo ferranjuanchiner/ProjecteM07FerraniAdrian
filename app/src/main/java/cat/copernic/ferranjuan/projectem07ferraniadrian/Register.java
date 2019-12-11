@@ -24,7 +24,7 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("hola mundo", null).show();
+                        .setAction("hola", null).show();
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
