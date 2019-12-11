@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">ProjecteM07FerraniAdrian</string>
+    <string name="titol">Iniciar Sesión</string>
+    <string name="etUsernamehint">Enter username</string>
+    <string name="etPasswordhint">Enter password</string>
+    <string name="btnLogintext">Login</string>
+    <string name="btnRegistertext">Register</string>
+    <string name="tvUsernametext">Username</string>
+    <string name="tvPasswordtext">Password</string>
 </resources>
