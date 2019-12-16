@@ -1,17 +1,20 @@
 package cat.copernic.ferranjuan.projectem07ferraniadrian;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    String TAG = "login";
+    String TAG = "login" ;
 
 
     Button btnLogin;
@@ -35,22 +38,33 @@ public class MainActivity extends AppCompatActivity {
                             "Missing fields",
                             Toast.LENGTH_SHORT).show();
                 } else {
-                    conectaUsuario(etUser.getText().toString(), etPasssword.getText().toString());
+                    final String username = etUser.getText().toString();
+                    final String password = etPasssword.getText().toString();
+                    if(username.equals("admin")&&password.equals("admin")){
+                        saveLoginSharedPreferences(username);
+                        Toast.makeText(MainActivity.this,"Login correcto",Toast.LENGTH_SHORT).show();
+                    }else{
+                        Toast.makeText(MainActivity.this,"Login Incorrecto",Toast.LENGTH_SHORT).show();
+                    }
                 }
+
             }
         });
 
     }
 
-
+    private void saveLoginSharedPreferences(String username){
+        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("username",username);
+        editor.apply();
+    }
 
     public void launchRegister(View view) {
         Intent intent = new Intent(this, Register.class);
         intent.putExtra("VAR INT", 1);
         startActivityForResult(intent, TEXT_REQUEST);
     }
-    private void conectaUsuario(String email, String password) {
 
-    }
 
 }
