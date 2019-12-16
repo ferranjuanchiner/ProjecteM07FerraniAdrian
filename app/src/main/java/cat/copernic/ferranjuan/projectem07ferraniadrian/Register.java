@@ -24,17 +24,6 @@ EditText pass;
         usuario = findViewById(R.id.etUser);
         pass = findViewById(R.id.etPassword);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
-    private void guardarPreferencias(){
-        SharedPreferences preferences = getSharedPreferences
-                ("credenciales", Context.MODE_PRIVATE);
-        String user = usuario.getText().toString();
-        String contrasena = pass.getText().toString();
 
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("user",user);
-        editor.putString("password",contrasena);
-        editor.commit();
-    }
 }

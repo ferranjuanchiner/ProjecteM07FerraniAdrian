@@ -67,11 +67,7 @@ public class MainActivity extends AppCompatActivity {
         editor.apply();
     }
 
-    public void launchRegister(View view) {
-        Intent intent = new Intent(this, Register.class);
-        intent.putExtra("VAR INT", 1);
-        startActivityForResult(intent, TEXT_REQUEST);
-    }
+
 
 
 }
