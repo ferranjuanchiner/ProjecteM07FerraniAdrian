@@ -44,7 +44,6 @@
         android:ems="10"
         android:hint="@string/txtUser"
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -75,7 +74,6 @@
         android:ems="10"
         android:hint="@string/etPass"
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvContraseña"
         app:layout_constraintTop_toBottomOf="@+id/etUser" />
@@ -89,7 +87,7 @@
         android:layout_marginTop="57dp"
         android:layout_marginEnd="46dp"
         android:layout_marginRight="46dp"
-        android:text="TextView"
+        android:text="@string/tvNombre"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/editText3"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,7 +104,6 @@
         android:ems="10"
         android:hint="@string/etNombre"
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etpassword" />
 
@@ -135,7 +132,6 @@
         android:ems="10"
         android:hint="@string/etApellido"
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText3" />
 

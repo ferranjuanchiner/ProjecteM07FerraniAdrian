@@ -40,8 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     final String username = etUser.getText().toString();
                     final String password = etPasssword.getText().toString();
-                    if(username.equals("admin")&&password.equals("admin")){
-                        saveLoginSharedPreferences(username);
+                    if(checkLoginSharedPreferences(username, password)){
                         Toast.makeText(MainActivity.this,"Login correcto",Toast.LENGTH_SHORT).show();
                     }else{
                         Toast.makeText(MainActivity.this,"Login Incorrecto",Toast.LENGTH_SHORT).show();
@@ -60,11 +59,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void saveLoginSharedPreferences(String username){
-        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString("username",username);
-        editor.apply();
+    private boolean checkLoginSharedPreferences(String username, String password){
+        SharedPreferences sharedPref = getSharedPreferences("MyPref",0);
+      String user = sharedPref.getString("username",null);
+      String pass = sharedPref.getString("password", null);
+      if (username.equals(user) && password.equals(pass)){
+          return true;
+      }
+      else return false;
     }
 
 
