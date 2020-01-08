@@ -41,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
                     final String username = etUser.getText().toString();
                     final String password = etPasssword.getText().toString();
                     if(checkLoginSharedPreferences(username, password)){
-                        Toast.makeText(MainActivity.this,"Login correcto",Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(getApplicationContext(), NavigationActivity.class);
+                        startActivity(i);
                     }else{
                         Toast.makeText(MainActivity.this,"Login Incorrecto",Toast.LENGTH_SHORT).show();
                     }
