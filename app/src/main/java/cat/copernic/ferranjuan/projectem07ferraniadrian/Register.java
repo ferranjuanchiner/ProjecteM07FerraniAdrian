@@ -19,6 +19,7 @@ public class Register extends AppCompatActivity {
 EditText usuario;
 EditText pass;
     Button btnRegistrarse;
+    Button btnCancelar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ EditText pass;
         usuario = findViewById(R.id.etUser);
         pass = findViewById(R.id.etpassword);
         btnRegistrarse = findViewById(R.id.btnRegistro);
+        btnCancelar = findViewById(R.id.btnCancelar);
 
     btnRegistrarse.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -41,7 +43,12 @@ EditText pass;
                     saveLoginSharedPreferences(username, password);
                     Toast.makeText(Register.this,"Saved user data",Toast.LENGTH_SHORT).show();
             }
-
+        }
+    });
+    btnCancelar.setOnClickListener(new View.OnClickListener(){
+        @Override
+        public void onClick(View View){
+            finish();
         }
     });}
     private void saveLoginSharedPreferences(String username, String password){
