@@ -25,19 +25,19 @@ import android.widget.TextView;
 public class NavigationActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    TextView tvUsername;
     String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        username = getIntent().getStringExtra("usuarioactual");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
+
+       username = getIntent().getStringExtra("usuarioactual");
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
-        tvUsername = findViewById(R.id.tvUsername);
-        tvUsername.setText(username);
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,7 +46,10 @@ public class NavigationActivity extends AppCompatActivity {
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        View headerView = navigationView.getHeaderView(0);
+        TextView navUsername = (TextView) headerView.findViewById(R.id.tvUsername);
+        navUsername.setText(username);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
