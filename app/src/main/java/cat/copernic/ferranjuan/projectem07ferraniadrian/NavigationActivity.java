@@ -25,11 +25,12 @@ import android.widget.TextView;
 public class NavigationActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    String username = getIntent().getStringExtra("usuario_actual");
     TextView tvUsername;
+    String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        username = getIntent().getStringExtra("usuarioactual");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
         Toolbar toolbar = findViewById(R.id.toolbar);
