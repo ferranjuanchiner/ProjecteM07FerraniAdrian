@@ -1,6 +1,7 @@
 package cat.copernic.ferranjuan.projectem07ferraniadrian;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -40,6 +41,7 @@ EditText pass;
                 final String password = pass.getText().toString();
                     saveLoginSharedPreferences(username, password);
                     Toast.makeText(Register.this,"Saved user data",Toast.LENGTH_SHORT).show();
+                    finish();
             }
 
         }
