@@ -20,10 +20,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.TextView;
 
 public class NavigationActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+    String username = getIntent().getStringExtra("usuario_actual");
+    TextView tvUsername;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,8 @@ public class NavigationActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
+        tvUsername = findViewById(R.id.tvUsername);
+        tvUsername.setText(username);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
