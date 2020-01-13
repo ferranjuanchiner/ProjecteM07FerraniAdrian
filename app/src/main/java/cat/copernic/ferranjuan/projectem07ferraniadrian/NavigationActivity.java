@@ -10,6 +10,7 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -22,7 +23,8 @@ import android.view.Menu;
 import android.widget.TextView;
 
 public class NavigationActivity extends AppCompatActivity
-    implements NavigationView.OnNavigationItemSelectedListener,
+    implements
+        NavigationView.OnNavigationItemSelectedListener,
         AlbumesFragment.OnFragmentInteractionListener,CategoriasFragment.OnFragmentInteractionListener,HomeFragment.OnFragmentInteractionListener {
     private AppBarConfiguration mAppBarConfiguration;
     String username;
@@ -49,12 +51,30 @@ public class NavigationActivity extends AppCompatActivity
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.bringToFront();
+        navigationView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+                    public boolean onNavigationItemSelected(MenuItem item) {
+                        displayView(item.getItemId());
+                        return true;
+                    }
+
+                });
         View headerView = navigationView.getHeaderView(0);
         TextView navUsername = (TextView) headerView.findViewById(R.id.tvUsername);
         navUsername.setText(username);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
 
+        mAppBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
+                R.id.nav_tools, R.id.nav_share, R.id.nav_send)
+                .setDrawerLayout(drawer)
+                .build();
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+        NavigationUI.setupWithNavController(navigationView, navController);
+        displayView(R.id.nav_slideshow);
     }
 
     @Override
@@ -71,27 +91,53 @@ public class NavigationActivity extends AppCompatActivity
                 || super.onSupportNavigateUp();
     }
 
-    @Override
-    public void onFragmentInteraction(Uri uri) {
 
+
+
+    public void displayView(int viewId) {
+
+        Fragment fragment = null;
+        String title = getString(R.string.app_name);
+
+       switch (viewId) {
+            case R.id.nav_home:
+                fragment = new HomeFragment();
+                title = "Home";
+
+                break;
+            case R.id.nav_gallery:
+                fragment = new CategoriasFragment();
+                title = "Categorias";
+
+                break;
+            case R.id.nav_slideshow:
+                fragment = new AlbumesFragment();
+                title = "Albumes";
+
+                break;
+        }
+        if (fragment != null) {
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.content_frame, fragment);
+            ft.commit();
+        }
+
+        // set the toolbar title
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(title);
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+    }
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        displayView(item.getItemId());
+        return true;
     }
 
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-        Fragment miFragment = null;
-        boolean fragmentSeleccionado = false;
-        if(id == R.id.nav_home){
-            miFragment = new HomeFragment();
-            fragmentSeleccionado= true;
-        }
-        else if(id == R.id.nav_gallery){
-            miFragment = new AlbumesFragment();
-            fragmentSeleccionado = true;
-        }
-        if (fragmentSeleccionado==true){
-            getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,miFragment).commit();
-        }
-        return false;
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }
