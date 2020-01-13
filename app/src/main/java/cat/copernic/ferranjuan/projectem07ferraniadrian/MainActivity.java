@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     String TAG = "login" ;
+    String hi;
 
 
     Button btnLogin;
