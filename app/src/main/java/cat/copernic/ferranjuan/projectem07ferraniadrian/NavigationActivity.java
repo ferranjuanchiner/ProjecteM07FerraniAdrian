@@ -1,5 +1,6 @@
 package cat.copernic.ferranjuan.projectem07ferraniadrian;
 
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -25,8 +26,9 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.widget.TextView;
 
-public class NavigationActivity extends AppCompatActivity {
-
+public class NavigationActivity extends AppCompatActivity
+    implements NavigationView.OnNavigationItemSelectedListener,
+        AlbumesFragment.OnFragmentInteractionListener,CategoriasFragment.OnFragmentInteractionListener,HomeFragment.OnFragmentInteractionListener {
     private AppBarConfiguration mAppBarConfiguration;
     String username;
 
@@ -36,6 +38,8 @@ public class NavigationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
 
+        Fragment fragment = new HomeFragment();
+        getSupportFragmentManager().beginTransaction().add(R.id.nav_host_fragment,fragment).commit();
        username = getIntent().getStringExtra("usuarioactual");
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -84,7 +88,8 @@ public class NavigationActivity extends AppCompatActivity {
         boolean fragmentSeleccionado = false;
 
         if(id == R.id.nav_home){
-
+            miFragment = new HomeFragment();
+            fragmentSeleccionado = true;
         }else if (id == R.id.nav_gallery){
             miFragment = new CategoriasFragment();
             fragmentSeleccionado = true;
@@ -95,10 +100,15 @@ public class NavigationActivity extends AppCompatActivity {
 
         }
         if (fragmentSeleccionado == true){
-          //  getSupportFragmentManager().beginTransaction().replace()
+            getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,miFragment).commit();
         }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }
