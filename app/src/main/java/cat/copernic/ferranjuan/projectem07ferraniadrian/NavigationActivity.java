@@ -5,8 +5,11 @@ import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import android.view.MenuItem;
 import android.view.View;
 
+import androidx.core.view.GravityCompat;
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -74,5 +77,28 @@ public class NavigationActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+    public boolean onNavigationItemSelected(MenuItem item){
+        int id = item.getItemId();
+        Fragment miFragment = null;
+        boolean fragmentSeleccionado = false;
+
+        if(id == R.id.nav_home){
+
+        }else if (id == R.id.nav_gallery){
+            miFragment = new CategoriasFragment();
+            fragmentSeleccionado = true;
+        }else if (id == R.id.nav_slideshow){
+            miFragment = new AlbumesFragment();
+            fragmentSeleccionado = true;
+        }else if (id == R.id.nav_tools){
+
+        }
+        if (fragmentSeleccionado == true){
+          //  getSupportFragmentManager().beginTransaction().replace()
+        }
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
     }
 }
