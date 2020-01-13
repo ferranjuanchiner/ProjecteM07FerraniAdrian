@@ -2,27 +2,22 @@ package cat.copernic.ferranjuan.projectem07ferraniadrian;
 
 import android.net.Uri;
 import android.os.Bundle;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
-
 import android.view.MenuItem;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-
 import com.google.android.material.navigation.NavigationView;
-
 import androidx.drawerlayout.widget.DrawerLayout;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 import android.view.Menu;
 import android.widget.TextView;
 
@@ -59,14 +54,7 @@ public class NavigationActivity extends AppCompatActivity
         navUsername.setText(username);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
-                R.id.nav_tools, R.id.nav_share, R.id.nav_send)
-                .setDrawerLayout(drawer)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-        NavigationUI.setupWithNavController(navigationView, navController);
+
     }
 
     @Override
@@ -82,33 +70,28 @@ public class NavigationActivity extends AppCompatActivity
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
-    public boolean onNavigationItemSelected(MenuItem item){
-        int id = item.getItemId();
-        Fragment miFragment = null;
-        boolean fragmentSeleccionado = false;
-
-        if(id == R.id.nav_home){
-            miFragment = new HomeFragment();
-            fragmentSeleccionado = true;
-        }else if (id == R.id.nav_gallery){
-            miFragment = new CategoriasFragment();
-            fragmentSeleccionado = true;
-        }else if (id == R.id.nav_slideshow){
-            miFragment = new AlbumesFragment();
-            fragmentSeleccionado = true;
-        }else if (id == R.id.nav_tools){
-
-        }
-        if (fragmentSeleccionado == true){
-            getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,miFragment).commit();
-        }
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
 
     @Override
     public void onFragmentInteraction(Uri uri) {
 
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        Fragment miFragment = null;
+        boolean fragmentSeleccionado = false;
+        if(id == R.id.nav_home){
+            miFragment = new HomeFragment();
+            fragmentSeleccionado= true;
+        }
+        else if(id == R.id.nav_gallery){
+            miFragment = new AlbumesFragment();
+            fragmentSeleccionado = true;
+        }
+        if (fragmentSeleccionado==true){
+            getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,miFragment).commit();
+        }
+        return false;
     }
 }
