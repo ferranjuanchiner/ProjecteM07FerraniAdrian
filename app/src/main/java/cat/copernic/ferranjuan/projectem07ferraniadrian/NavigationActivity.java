@@ -74,7 +74,7 @@ public class NavigationActivity extends AppCompatActivity
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-        displayView(R.id.nav_slideshow);
+        displayView(R.id.nav_home);
     }
 
     @Override
@@ -102,7 +102,7 @@ public class NavigationActivity extends AppCompatActivity
        switch (viewId) {
             case R.id.nav_home:
                 fragment = new HomeFragment();
-                title = "Home";
+                title = "Inicio";
 
                 break;
             case R.id.nav_gallery:
