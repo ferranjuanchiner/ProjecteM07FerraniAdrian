@@ -42,4 +42,8 @@
     <string name="encore">Encore</string>
     <string name="bad">Bad</string>
     <string name="elmalquerer">El mal querer</string>
+    <string name="termsandconditions_checkbox">He leído y acepto los términos y condiciones de uso de esta aplicación.</string>
+    <string name="hombre">Hombre</string>
+    <string name="mujer">Mujer</string>
+    <string name="genero">Genero:</string>
 </resources>

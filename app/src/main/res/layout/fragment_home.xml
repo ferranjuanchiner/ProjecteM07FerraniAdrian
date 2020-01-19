@@ -62,7 +62,6 @@
         android:layout_width="164dp"
         android:layout_height="157dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         card_view:layout_constraintEnd_toStartOf="@+id/cardView2"
         card_view:layout_constraintStart_toStartOf="parent"
         card_view:layout_constraintTop_toTopOf="parent">
