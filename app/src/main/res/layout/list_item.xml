@@ -37,6 +37,7 @@
             android:layout_alignBottom="@id/album_images"
             android:padding="8dp"
             android:text="@string/title_placeholder"
+            android:background="#80000000"
             android:theme="@style/ThemeOverlay.AppCompat.Dark" />
 
 
