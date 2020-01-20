@@ -80,7 +80,8 @@ public class HomeFragment extends Fragment {
 
         mRecyclerView = rootView.findViewById(R.id.recyclerView);
         RecyclerView.LayoutManager lm = new GridLayoutManager(getActivity(),2);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        androidx.recyclerview.widget.GridLayoutManager gridLayout = new androidx.recyclerview.widget.GridLayoutManager(getActivity(), 2);
+        mRecyclerView.setLayoutManager(gridLayout);
         mAlbumesData = new ArrayList<>();
         mAdapter = new AlbumesAdapter(getActivity(),mAlbumesData);
         mRecyclerView.setAdapter(mAdapter);

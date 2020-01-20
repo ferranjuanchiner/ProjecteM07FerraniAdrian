@@ -54,6 +54,7 @@
     <string name="hombre">hombre</string>
     <string name="mujer">mujer</string>
     <string name="termsandconditions_checkbox">terminos y condiciones</string>
+    <string name="genero">Genero:</string>
 
     <string-array name="albumes_titles">
         <item>Bad</item>
