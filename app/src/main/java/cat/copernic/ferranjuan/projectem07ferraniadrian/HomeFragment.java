@@ -1,6 +1,5 @@
 package cat.copernic.ferranjuan.projectem07ferraniadrian;
 
-import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,9 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+
+import cat.copernic.ferranjuan.projectem07ferraniadrian.ui.home.HomeViewModel;
 
 
 /**
@@ -23,6 +26,7 @@ import java.util.ArrayList;
  */
 public class HomeFragment extends Fragment {
 
+    private HomeViewModel homeViewModel;
     private RecyclerView mRecyclerView;
     private ArrayList<Albumes> mAlbumesData;
     private AlbumesAdapter mAdapter;
@@ -35,7 +39,7 @@ public class HomeFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private OnFragmentInteractionListener mListener;
+    private cat.copernic.ferranjuan.projectem07ferraniadrian.HomeFragment.OnFragmentInteractionListener mListener;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -50,8 +54,8 @@ public class HomeFragment extends Fragment {
      * @return A new instance of fragment HomeFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static HomeFragment newInstance(String param1, String param2) {
-        HomeFragment fragment = new HomeFragment();
+    public static cat.copernic.ferranjuan.projectem07ferraniadrian.HomeFragment newInstance(String param1, String param2) {
+        cat.copernic.ferranjuan.projectem07ferraniadrian.HomeFragment fragment = new cat.copernic.ferranjuan.projectem07ferraniadrian.HomeFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -71,8 +75,19 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+
+        mRecyclerView = rootView.findViewById(R.id.recyclerView);
+        RecyclerView.LayoutManager lm = new GridLayoutManager(getActivity(),2);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        mAlbumesData = new ArrayList<>();
+        mAdapter = new AlbumesAdapter(getActivity(),mAlbumesData);
+        mRecyclerView.setAdapter(mAdapter);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        initializeData();
+        return rootView;
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -82,33 +97,17 @@ public class HomeFragment extends Fragment {
         }
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
+    private void initializeData() {
+
+    mAlbumesData.add(new Albumes("Bad",R.drawable.bad));
+    mAlbumesData.add(new Albumes("dark side of the moon",R.drawable.dsotm));
+    mAlbumesData.add(new Albumes("El mal querer",R.drawable.elmalquerer));
+    mAlbumesData.add(new Albumes("encore",R.drawable.encore));
     }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
+    public void resetSports(View view) {
+        initializeData();
     }
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);

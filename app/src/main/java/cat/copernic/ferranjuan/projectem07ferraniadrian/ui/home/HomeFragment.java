@@ -20,8 +20,6 @@ import cat.copernic.ferranjuan.projectem07ferraniadrian.R;
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
-
-
     private RecyclerView mRecyclerView;
     private ArrayList<Albumes> mAlbumesData;
     private AlbumesAdapter mAdapter;

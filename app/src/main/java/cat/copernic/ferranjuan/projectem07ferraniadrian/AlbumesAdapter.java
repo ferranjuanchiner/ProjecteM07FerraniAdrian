@@ -15,8 +15,8 @@ import java.util.ArrayList;
 public class AlbumesAdapter extends RecyclerView.Adapter<AlbumesAdapter.ViewHolder> {
     private ArrayList<Albumes> mAlbumesData;
     private Context mContext;
-    public AlbumesAdapter(Context context, ArrayList<Albumes> sportsData) {
-        this.mAlbumesData = sportsData;
+    public AlbumesAdapter(Context context, ArrayList<Albumes> albumesData) {
+        this.mAlbumesData = albumesData;
         this.mContext = context;
     }
     @Override
