@@ -51,6 +51,11 @@
     </array>
     <string name="title_placeholder">Title</string>
     <string name="news_placeholder">News</string>
+    <string name="sports_info_placeholder">lorem ipsum</string>
+    <string name="termsandconditions_checkbox">He leido y acepto los terminos y condiciones</string>
+    <string name="mujer">Mujer</string>
+    <string name="genero">Genero:</string>
+    <string name="hombre">Hombre</string>
 
     <string-array name="albumes_titles">
         <item>Bad</item>
