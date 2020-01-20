@@ -42,22 +42,4 @@
     <string name="encore">Encore</string>
     <string name="bad">Bad</string>
     <string name="elmalquerer">El mal querer</string>
-
-    <array name="album_images">
-        <item>@drawable/bad</item>
-        <item>@drawable/dsotm</item>
-        <item>@drawable/elmalquerer</item>
-        <item>@drawable/encore</item>
-    </array>
-    <string name="title_placeholder">Title</string>
-    <string name="news_placeholder">News</string>
-    <string name="sports_info_placeholder">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id libero eget diam rhoncus rhoncus. In hac habitasse platea dictumst. Duis volutpat tortor id libero congue, ac scelerisque enim facilisis. Donec vel ligula eget ex elementum sodales. Donec ac mauris rutrum, fermentum dolor ac, sagittis lectus. Curabitur porta, mauris eu interdum placerat, mauris magna hendrerit justo, in accumsan mi turpis vitae nulla. Phasellus odio velit, faucibus sit amet rhoncus nec, auctor et purus. Nulla congue arcu vitae arcu laoreet, eget aliquet turpis vulputate. Vivamus porttitor, leo vitae volutpat volutpat, mi tellus interdum sapien, vitae malesuada massa mi at massa. In placerat eros et turpis lobortis, et feugiat massa gravida. Nunc neque dui, blandit eu arcu eget, rhoncus sagittis enim.
-                                            Nulla dignissim ligula at vulputate bibendum. In non fermentum tellus, non luctus metus. Suspendisse nunc metus, fringilla a velit id, blandit sollicitudin ligula. Duis posuere ullamcorper feugiat. Duis luctus ipsum ut massa vulputate, in consequat augue eleifend. Sed hendrerit massa ut sapien scelerisque, ultricies sodales nulla imperdiet. Donec vel consectetur diam. Nunc sed viverra velit. Nunc ut mi finibus, tincidunt urna sit amet, pulvinar mi.</string>
-
-    <string-array name="albumes_titles">
-        <item>Bad</item>
-        <item>Dark Side of the Moon</item>
-        <item>El mar querer</item>
-        <item>Encore</item>
-    </string-array>
 </resources>
