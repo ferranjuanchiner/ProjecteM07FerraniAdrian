@@ -101,9 +101,9 @@ public class HomeFragment extends Fragment {
     private void initializeData() {
 
     mAlbumesData.add(new Albumes("Bad",R.drawable.bad));
-    mAlbumesData.add(new Albumes("dark side of the moon",R.drawable.dsotm));
+    mAlbumesData.add(new Albumes("Dark side of the Moon",R.drawable.dsotm));
     mAlbumesData.add(new Albumes("El mal querer",R.drawable.elmalquerer));
-    mAlbumesData.add(new Albumes("encore",R.drawable.encore));
+    mAlbumesData.add(new Albumes("Encore",R.drawable.encore));
     }
 
     public void resetSports(View view) {
