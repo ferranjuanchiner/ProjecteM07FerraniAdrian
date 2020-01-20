@@ -42,4 +42,20 @@
     <string name="encore">Encore</string>
     <string name="bad">Bad</string>
     <string name="elmalquerer">El mal querer</string>
+
+    <array name="albumes_images">
+        <item>@drawable/bad</item>
+        <item>@drawable/dsotm</item>
+        <item>@drawable/elmalquerer</item>
+        <item>@drawable/encore</item>
+    </array>
+    <string name="title_placeholder">Title</string>
+    <string name="news_placeholder">News</string>
+
+    <string-array name="albumes_titles">
+        <item>Bad</item>
+        <item>Dark Side of the Moon</item>
+        <item>El mal querer</item>
+        <item>encore</item>
+    </string-array>
 </resources>

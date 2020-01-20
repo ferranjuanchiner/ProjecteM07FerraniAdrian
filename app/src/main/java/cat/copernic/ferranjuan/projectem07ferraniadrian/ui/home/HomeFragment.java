@@ -105,7 +105,7 @@ public class HomeFragment extends Fragment {
         // information about each sport.
         for(int i=0;i<albumesList.length;i++){
             TypedArray sportsImageResources =
-                    getResources().obtainTypedArray(R.array.album_images);
+                    getResources().obtainTypedArray(R.array.albumes_images);
             mAlbumesData.add(new Albumes(albumesList[i], sportsImageResources.getResourceId(i,0)));
             sportsImageResources.recycle();
 
