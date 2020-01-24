@@ -1,27 +1,21 @@
 package cat.copernic.ferranjuan.projectem07ferraniadrian;
 
-import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Register extends AppCompatActivity {
 EditText usuario;
 EditText pass;
     Button btnRegistrarse;
     Button btnCancelar;
-
+CheckBox cBox;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +24,7 @@ EditText pass;
         pass = findViewById(R.id.etpassword);
         btnRegistrarse = findViewById(R.id.btnRegistro);
         btnCancelar = findViewById(R.id.btnCancelar);
+        cBox = findViewById(R.id.cbTerminos);
 
     btnRegistrarse.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -38,7 +33,10 @@ EditText pass;
                 Toast.makeText(Register.this,
                         "Missing username and password",
                         Toast.LENGTH_SHORT).show();
-            } else {
+            }else if(cBox.isChecked()==false){
+                Toast.makeText(Register.this,"S'han d'acceptar els termes d'ús per poder continuar",Toast.LENGTH_SHORT).show();
+            }
+            else {
                 final String username = usuario.getText().toString();
                 final String password = pass.getText().toString();
                     saveLoginSharedPreferences(username, password);
