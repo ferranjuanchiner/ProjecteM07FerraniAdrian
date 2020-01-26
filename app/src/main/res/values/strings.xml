@@ -55,7 +55,7 @@
     <string name="mujer">Mujer</string>
     <string name="termsandconditions_checkbox">He llegit i accepto els termes i condicions de la aplicacio</string>
     <string name="genero">Genero:</string>
-    <string name="etSwitch">Color clar/oscur:</string>
+    <string name="etSwitch">Mode nit / dia:</string>
     <string name="swBn">B/N</string>
 
     <string-array name="albums_titles">

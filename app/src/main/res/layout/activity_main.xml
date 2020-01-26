@@ -15,10 +15,12 @@
         android:layout_marginTop="48dp"
         android:layout_marginEnd="112dp"
         android:layout_marginRight="112dp"
+        android:textColor="@color/colorPrimaryDark"
         android:text="@string/btnLogintext"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/button_border"
         app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
     <Button
@@ -31,26 +33,31 @@
         android:layout_marginEnd="110dp"
         android:layout_marginRight="110dp"
         android:layout_marginBottom="160dp"
+        android:background="@drawable/button_border"
+        android:textColor="@color/colorPrimaryDark"
         android:text="@string/btnRegistertext"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnlogin" />
+        app:layout_constraintTop_toBottomOf="@+id/btnlogin"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/etPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="148dp"
+        android:layout_height="70dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="44dp"
         android:layout_marginEnd="36dp"
         android:layout_marginRight="36dp"
         android:ems="10"
         android:hint="@string/etPasswordhint"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/tvPassword"
         app:layout_constraintTop_toBottomOf="@+id/etUsername" />
 
