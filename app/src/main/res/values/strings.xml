@@ -1,21 +1,21 @@
 <resources>
     <string name="app_name">ProjecteM07FerraniAdrian</string>
-    <string name="titol">Iniciar Sesión</string>
-    <string name="etUsernamehint">Enter username</string>
-    <string name="etPasswordhint">Enter password</string>
-    <string name="btnLogintext">Login</string>
-    <string name="btnRegistertext">Register</string>
-    <string name="tvUsernametext">Username</string>
-    <string name="tvPasswordtext">Password</string>
+    <string name="titol">Inicia Sesió</string>
+    <string name="etUsernamehint">Usuari</string>
+    <string name="etPasswordhint">Contrassenya</string>
+    <string name="btnLogintext">Accedir</string>
+    <string name="btnRegistertext">Registrar</string>
+    <string name="tvUsernametext">Usuari</string>
+    <string name="tvPasswordtext">Contrassenya</string>
     <string name="title_activity_register2">Register2</string>
     <string name="txtUser">Usuari:</string>
-    <string name="tvContrasena">Contraseña</string>
-    <string name="etPass">Contraseña</string>
-    <string name="tvNombre">Nombre</string>
-    <string name="tvApellidos">Apellidos</string>
-    <string name="etNombre">Nombre</string>
-    <string name="etApellido">Apellido</string>
-    <string name="btnRegistrarse">Registrarse</string>
+    <string name="tvContrasena">Contrassenya</string>
+    <string name="etPass">Contrassenya</string>
+    <string name="tvNombre">Nom</string>
+    <string name="tvApellidos">Cognom</string>
+    <string name="etNombre">Nom</string>
+    <string name="etApellido">Congnom</string>
+    <string name="btnRegistrarse">Registrar-se</string>
     <string name="btnCancelar">Cancelar</string>
     <string name="title_activity_navigation">NavigationActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -29,15 +29,15 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_tools">Tools</string>
-    <string name="menu_share">Share</string>
+    <string name="menu_perfilusuari">Perfil usuari</string>
     <string name="menu_send">Send</string>
     <string name="tvUsername" />
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="Albumes">Albumes</string>
-    <string name="Categorias">Categorias</string>
-    <string name="Inicio">Inicio</string>
+    <string name="Albums">Albums</string>
+    <string name="Categories">Categories</string>
+    <string name="Inici">Inici</string>
     <string name="darksideofthemoon">Dark Side Of The Moon</string>
     <string name="encore">Encore</string>
     <string name="bad">Bad</string>
@@ -53,13 +53,19 @@
     <string name="news_placeholder">News</string>
     <string name="hombre">Hombre</string>
     <string name="mujer">Mujer</string>
-    <string name="termsandconditions_checkbox">He leído y acepto los terminos y condiciones de uso de la apliación</string>
+    <string name="termsandconditions_checkbox">He llegit i accepto els termes i condicions de la aplicacio</string>
     <string name="genero">Genero:</string>
 
-    <string-array name="albumes_titles">
+    <string-array name="albums_titles">
         <item>Bad</item>
         <item>Dark Side of the Moon</item>
         <item>El mal querer</item>
         <item>Encore</item>
+    </string-array>
+    <string-array name="filtre">
+        <item>Filtre...</item>
+        <item>Ordena de la a-z</item>
+        <item>Ordena de la z-a</item>
+        <item>Ordena per categoríes</item>
     </string-array>
 </resources>

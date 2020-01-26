@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Spinner;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -18,7 +19,7 @@ import cat.copernic.ferranjuan.projectem07ferraniadrian.AlbumesAdapter;
 import cat.copernic.ferranjuan.projectem07ferraniadrian.R;
 
 public class HomeFragment extends Fragment {
-
+    Spinner sp;
     private HomeViewModel homeViewModel;
     private RecyclerView mRecyclerView;
     private ArrayList<Albumes> mAlbumesData;
@@ -63,6 +64,7 @@ public class HomeFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
@@ -93,7 +95,7 @@ public class HomeFragment extends Fragment {
     private void initializeData() {
         // Get the resources from the XML file.
         String[] albumesList = getResources()
-                .getStringArray(R.array.albumes_titles);
+                .getStringArray(R.array.albums_titles);
 
 
         // Clear the existing data (to avoid duplication).

@@ -8,19 +8,19 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="cat.copernic.ferranjuan.projectem07ferraniadrian.ui.home.HomeFragment"
-        android:label="@string/Inicio"
+        android:label="@string/Inici"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_gallery"
         android:name="cat.copernic.ferranjuan.projectem07ferraniadrian.ui.gallery.GalleryFragment"
-        android:label="@string/Albumes"
+        android:label="@string/Albums"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="cat.copernic.ferranjuan.projectem07ferraniadrian.ui.slideshow.SlideshowFragment"
-        android:label="@string/Categorias"
+        android:label="@string/Categories"
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
@@ -32,12 +32,12 @@
     <fragment
         android:id="@+id/nav_share"
         android:name="cat.copernic.ferranjuan.projectem07ferraniadrian.ui.share.ShareFragment"
-        android:label="@string/menu_share"
+        android:label="@string/menu_perfilusuari"
         tools:layout="@layout/fragment_share" />
 
     <fragment
         android:id="@+id/nav_send"
-        android:name="cat.copernic.ferranjuan.projectem07ferraniadrian.ui.send.SendFragment"
+        android:name="cat.copernic.ferranjuan.projectem07ferraniadrian.ui.send.PerfilFragment"
         android:label="@string/menu_send"
         tools:layout="@layout/fragment_send" />
 </navigation>

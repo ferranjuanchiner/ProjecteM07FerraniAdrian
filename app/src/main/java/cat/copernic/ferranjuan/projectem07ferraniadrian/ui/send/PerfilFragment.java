@@ -13,7 +13,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import cat.copernic.ferranjuan.projectem07ferraniadrian.R;
 
-public class SendFragment extends Fragment {
+public class PerfilFragment extends Fragment {
 
     private SendViewModel sendViewModel;
 

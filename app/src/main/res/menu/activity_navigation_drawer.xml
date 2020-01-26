@@ -7,15 +7,15 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/house"
-            android:title="@string/Inicio" />
+            android:title="@string/Inici" />
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/album"
-            android:title="@string/Albumes" />
+            android:title="@string/Albums" />
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/guitar"
-            android:title="@string/Categorias" />
+            android:title="@string/Categories" />
         <item
             android:id="@+id/nav_tools"
             android:icon="@drawable/ic_menu_manage"
@@ -27,7 +27,7 @@
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
-                android:title="@string/menu_share" />
+                android:title="@string/menu_perfilusuari" />
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
