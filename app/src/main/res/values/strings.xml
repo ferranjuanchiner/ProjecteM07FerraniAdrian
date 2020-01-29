@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">ProjecteM07FerraniAdrian</string>
-    <string name="titol">Inicia Sesió</string>
+    <string name="titol">Inicia Sessió</string>
     <string name="etUsernamehint">Usuari</string>
     <string name="etPasswordhint">Contrassenya</string>
     <string name="btnLogintext">Accedir</string>
@@ -14,34 +14,32 @@
     <string name="tvNombre">Nom</string>
     <string name="tvApellidos">Cognom</string>
     <string name="etNombre">Nom</string>
-    <string name="etApellido">Congnom</string>
+    <string name="etApellido">Cognom</string>
     <string name="btnRegistrarse">Registrar-se</string>
     <string name="btnCancelar">Cancelar</string>
     <string name="title_activity_navigation">NavigationActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title" translatable="false">Android Studio</string>
+    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
+    <string name="menu_home">Inici</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_tools">Tools</string>
     <string name="menu_perfilusuari">Perfil usuari</string>
     <string name="menu_send">Send</string>
-    <string name="tvUsername" />
+    <string name="tvUsername" translatable="false" />
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Albums">Albums</string>
     <string name="Categories">Categories</string>
     <string name="Inici">Inici</string>
-    <string name="darksideofthemoon">Dark Side Of The Moon</string>
-    <string name="encore">Encore</string>
-    <string name="bad">Bad</string>
-    <string name="elmalquerer">El mal querer</string>
+    <string name="darksideofthemoon" translatable="false">Dark Side Of The Moon</string>
+    <string name="encore" translatable="false">Encore</string>
+    <string name="bad" translatable="false">Bad</string>
+    <string name="elmalquerer" translatable="false">El mal querer</string>
 
     <array name="albumes_images">
         <item>@drawable/bad</item>
@@ -51,23 +49,43 @@
     </array>
     <string name="title_placeholder">Title</string>
     <string name="news_placeholder">News</string>
-    <string name="hombre">Hombre</string>
-    <string name="mujer">Mujer</string>
-    <string name="termsandconditions_checkbox">He llegit i accepto els termes i condicions de la aplicacio</string>
-    <string name="genero">Genero:</string>
+    <string name="hombre">Home</string>
+    <string name="termsandconditions_checkbox">He llegit i accepto els termes i condicions de l\'aplicacio</string>
+    <string name="genero">Genere:</string>
     <string name="etSwitch">Mode nit / dia:</string>
     <string name="swBn">B/N</string>
 
     <string-array name="albums_titles">
-        <item>Bad</item>
-        <item>Dark Side of the Moon</item>
-        <item>El mal querer</item>
-        <item>Encore</item>
+        <item>@string/bad</item>
+        <item>@string/darksideofthemoon</item>
+        <item>@string/elmalquerer</item>
+        <item>@string/encore</item>
     </string-array>
     <string-array name="filtre">
-        <item>Filtre...</item>
-        <item>Ordena de la a-z</item>
-        <item>Ordena de la z-a</item>
-        <item>Ordena per categoríes</item>
+        <item>@string/filtre</item>
+        <item>@string/orderaz</item>
+        <item>@string/orderza</item>
+        <item>@string/odercategories</item>
     </string-array>
+    <string-array name="idiomas">
+        <item>@string/idiomas</item>
+        <item>@string/cat</item>
+        <item>@string/es</item>
+        <item>@string/en</item>
+    </string-array>
+    <string name="mujer">Dona</string>
+    <string name="errorregistre">Has d\'introduir usuari i contrassenya</string>
+    <string name="errortermes">S\'han d\'acceptar els termes d\'ús per poder continuar</string>
+    <string name="mssgsaveduser">S\'han desat les dades de l\'usuari</string>
+    <string name="errorlogin">Dades d\'accés incorrectes</string>
+    <string name="menu_tools">Configuració</string>
+    <string name="filtre">filtre...</string>
+    <string name="orderaz">Ordena de l\'A a la Z</string>
+    <string name="orderza">Ordena de la Z a l\'A</string>
+    <string name="odercategories">Ordena per categoríes</string>
+    <string name="idiomas">Idiomes...</string>
+    <string name="cat">Català</string>
+    <string name="es">Espanyol</string>
+    <string name="en">Anglès</string>
+    <string name="tvIdiomas">Selecciona l\'idioma:</string>
 </resources>

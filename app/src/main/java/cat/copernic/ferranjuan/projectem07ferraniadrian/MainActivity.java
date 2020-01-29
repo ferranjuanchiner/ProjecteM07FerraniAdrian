@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (etUser.toString().isEmpty() || etPasssword.getText().toString().isEmpty()) {
                     Toast.makeText(MainActivity.this,
-                            "Missing fields",
+                            R.string.errorregistre,
                             Toast.LENGTH_SHORT).show();
                 } else {
                     final String username = etUser.getText().toString();
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                         i.putExtra("usuarioactual", username);
                         startActivity(i);
                     } else {
-                        Toast.makeText(MainActivity.this, "Login Incorrecto", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, R.string.errorlogin, Toast.LENGTH_SHORT).show();
                     }
                 }
 

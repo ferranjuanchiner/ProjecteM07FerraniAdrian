@@ -63,7 +63,7 @@
 
     <EditText
         android:id="@+id/etUsername"
-        android:layout_width="211dp"
+        android:layout_width="145dp"
         android:layout_height="70dp"
         android:layout_marginStart="89dp"
         android:layout_marginLeft="89dp"
@@ -74,6 +74,7 @@
         android:hint="@string/etUsernamehint"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.926"
         app:layout_constraintStart_toEndOf="@+id/tvUsername"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
@@ -98,6 +99,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="221dp"
+        android:fontFamily="@font/audiowide"
         android:text="@string/tvUsernametext"
         android:textColor="@android:color/black"
         android:textSize="20sp"

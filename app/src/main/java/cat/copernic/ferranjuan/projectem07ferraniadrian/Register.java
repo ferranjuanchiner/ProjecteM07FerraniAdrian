@@ -31,16 +31,16 @@ CheckBox cBox;
         public void onClick(View view) {
             if(usuario.toString().isEmpty() || pass.getText().toString().isEmpty()){
                 Toast.makeText(Register.this,
-                        "Missing username and password",
+                        R.string.errorregistre,
                         Toast.LENGTH_SHORT).show();
             }else if(cBox.isChecked()==false){
-                Toast.makeText(Register.this,"S'han d'acceptar els termes d'ús per poder continuar",Toast.LENGTH_SHORT).show();
+                Toast.makeText(Register.this,R.string.errortermes,Toast.LENGTH_SHORT).show();
             }
             else {
                 final String username = usuario.getText().toString();
                 final String password = pass.getText().toString();
                     saveLoginSharedPreferences(username, password);
-                    Toast.makeText(Register.this,"Saved user data",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Register.this,R.string.mssgsaveduser,Toast.LENGTH_SHORT).show();
                     finish();
             }
         }
