@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">ProjecteM07FerraniAdrian</string>
     <string name="titol">Inicia Sessió</string>
     <string name="etUsernamehint">Usuari</string>
@@ -27,7 +27,7 @@
     <string name="menu_home">Inici</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_perfilusuari">Perfil usuari</string>
+    <string name="menu_perfilusuari">Perfil d\'usuari</string>
     <string name="menu_send">Send</string>
     <string name="tvUsername" translatable="false" />
 
@@ -74,18 +74,18 @@
         <item>@string/en</item>
     </string-array>
     <string name="mujer">Dona</string>
-    <string name="errorregistre">Has d\'introduir usuari i contrassenya</string>
-    <string name="errortermes">S\'han d\'acceptar els termes d\'ús per poder continuar</string>
-    <string name="mssgsaveduser">S\'han desat les dades de l\'usuari</string>
-    <string name="errorlogin">Dades d\'accés incorrectes</string>
     <string name="menu_tools">Configuració</string>
-    <string name="filtre">filtre...</string>
-    <string name="orderaz">Ordena de l\'A a la Z</string>
-    <string name="orderza">Ordena de la Z a l\'A</string>
-    <string name="odercategories">Ordena per categoríes</string>
-    <string name="idiomas">Idiomes...</string>
-    <string name="cat">Català</string>
-    <string name="es">Espanyol</string>
-    <string name="en">Anglès</string>
-    <string name="tvIdiomas">Selecciona l\'idioma:</string>
+    <string name="tvIdiomas" tools:ignore="DuplicateDefinition">Selecciona l\'idioma:</string>
+    <string name="orderza" tools:ignore="DuplicateDefinition">Ordena de la Z a la A</string>
+    <string name="orderaz" tools:ignore="DuplicateDefinition">Ordena de la A a la Z</string>
+    <string name="odercategories" tools:ignore="DuplicateDefinition">Ordena per categories</string>
+    <string name="mssgsaveduser" tools:ignore="DuplicateDefinition">Dades d\'usuari desades</string>
+    <string name="idiomas" tools:ignore="DuplicateDefinition">Idiomes</string>
+    <string name="filtre" tools:ignore="DuplicateDefinition">filtre...</string>
+    <string name="es" tools:ignore="DuplicateDefinition">Espanyol</string>
+    <string name="errortermes" tools:ignore="DuplicateDefinition">S\'han d\'acceptar els termes d\'ús per poder continuar</string>
+    <string name="errorregistre" tools:ignore="DuplicateDefinition">Has d\'introduir l\'usuari i contrassenya</string>
+    <string name="errorlogin" tools:ignore="DuplicateDefinition">Dades d\'accés incorrectes</string>
+    <string name="en" tools:ignore="DuplicateDefinition">Anglés</string>
+    <string name="cat" tools:ignore="DuplicateDefinition">Català</string>
 </resources>

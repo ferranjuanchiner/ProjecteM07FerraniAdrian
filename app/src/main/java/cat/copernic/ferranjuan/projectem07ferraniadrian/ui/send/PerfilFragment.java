@@ -5,14 +5,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.Locale;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -42,26 +36,7 @@ public class PerfilFragment extends Fragment {
         });
         espanol = root.getResources().getString(R.string.es);
         sw = root.findViewById(R.id.swColor);
-        Spinner spinner = (Spinner) root.findViewById(R.id.spinner2);
-        ArrayAdapter<String> adapter = new ArrayAdapter(this.getContext(), android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        AdapterView.OnItemSelectedListener mListener = new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-             if   (espanol == parent.getSelectedItem().toString()){
-                 Locale locale = new Locale("es");
 
-                 Locale.setDefault(locale);
-                 Toast.makeText(getActivity(),"español",Toast.LENGTH_SHORT);
-             }
-                Toast.makeText(getActivity(),"no español",Toast.LENGTH_SHORT);
-            } //still never shows up in toast
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                Toast.makeText(getActivity(),"nada",Toast.LENGTH_SHORT);
-            }};
-        spinner.setOnItemSelectedListener(mListener);
         return root;
     }
 

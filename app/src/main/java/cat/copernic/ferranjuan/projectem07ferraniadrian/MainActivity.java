@@ -50,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+
         btnRegistre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
