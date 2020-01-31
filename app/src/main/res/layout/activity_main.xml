@@ -12,15 +12,15 @@
         android:layout_height="69dp"
         android:layout_marginStart="114dp"
         android:layout_marginLeft="114dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="112dp"
-        android:layout_marginRight="112dp"
-        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="65dp"
+        android:layout_marginEnd="110dp"
+        android:layout_marginRight="110dp"
+        android:background="@drawable/button_border"
         android:text="@string/btnLogintext"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/button_border"
         app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
     <Button
@@ -32,51 +32,41 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="110dp"
         android:layout_marginRight="110dp"
-        android:layout_marginBottom="160dp"
+        android:layout_marginBottom="134dp"
         android:background="@drawable/button_border"
-        android:textColor="@color/colorPrimaryDark"
         android:text="@string/btnRegistertext"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnlogin"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/btnlogin" />
 
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="148dp"
         android:layout_height="70dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="35dp"
         android:layout_marginEnd="36dp"
         android:layout_marginRight="36dp"
         android:ems="10"
         android:hint="@string/etPasswordhint"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/tvPassword"
         app:layout_constraintTop_toBottomOf="@+id/etUsername" />
 
     <EditText
         android:id="@+id/etUsername"
         android:layout_width="145dp"
         android:layout_height="70dp"
-        android:layout_marginStart="89dp"
-        android:layout_marginLeft="89dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="33dp"
-        android:layout_marginRight="33dp"
+        android:layout_marginTop="190dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
         android:ems="10"
         android:hint="@string/etUsernamehint"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.926"
-        app:layout_constraintStart_toEndOf="@+id/tvUsername"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"

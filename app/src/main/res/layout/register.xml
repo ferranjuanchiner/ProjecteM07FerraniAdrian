@@ -27,20 +27,20 @@
         android:id="@+id/btnRegistro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
         android:layout_marginTop="60dp"
-        android:text="@string/btnRegistrarse"
-        android:textSize="20sp"
         android:background="@drawable/button_border"
+        android:text="@string/btnRegistrarse"
         android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <CheckBox
         android:id="@+id/cbTerminos"
-        android:layout_width="360dp"
-        android:layout_height="112dp"
+        android:layout_width="380dp"
+        android:layout_height="72dp"
         android:layout_marginStart="38dp"
         android:layout_marginLeft="38dp"
         android:layout_marginTop="3dp"
@@ -209,4 +209,46 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
+    <Button
+        android:id="@+id/btnCat"
+        android:layout_width="55dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="170dp"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/btn_cat"
+        android:onClick="cambiaCat"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbTerminos"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnEng"
+        android:layout_width="56dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/btn_eng"
+        android:onClick="cambiaEng"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnCat"
+        app:layout_constraintTop_toBottomOf="@+id/cbTerminos" />
+
+    <Button
+        android:id="@+id/btnCast"
+        android:layout_width="56dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/btn_cast"
+        android:onClick="cambiaEsp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnEng"
+        app:layout_constraintTop_toBottomOf="@+id/cbTerminos" />
 </androidx.constraintlayout.widget.ConstraintLayout>

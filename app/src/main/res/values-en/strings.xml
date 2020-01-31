@@ -53,4 +53,6 @@
     <string name="tvPasswordtext">Password</string>
     <string name="tvUsernametext">Username</string>
     <string name="txtUser">Username:</string>
+    <string name="btnCat" >.</string>
+    <string name="btnEng">.</string>
 </resources>

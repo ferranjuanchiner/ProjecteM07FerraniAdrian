@@ -53,4 +53,6 @@
     <string name="tvPasswordtext">Contrassenya</string>
     <string name="tvUsernametext">Usuari:</string>
     <string name="txtUser">Usuari:</string>
+    <string name="btnCat" >.</string>
+    <string name="btnEng">.</string>
 </resources>

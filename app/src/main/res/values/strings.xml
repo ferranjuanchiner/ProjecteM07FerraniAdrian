@@ -88,4 +88,5 @@
     <string name="errorlogin" tools:ignore="DuplicateDefinition">Dades d\'accés incorrectes</string>
     <string name="en" tools:ignore="DuplicateDefinition">Anglés</string>
     <string name="cat" tools:ignore="DuplicateDefinition">Català</string>
+
 </resources>
