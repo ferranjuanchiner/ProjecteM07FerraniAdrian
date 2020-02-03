@@ -95,20 +95,20 @@ public class NavigationActivity extends AppCompatActivity
             case R.id.nav_home:
                 fragment = new HomeFragment();
                 title = "Inici";
-                finish();
+
                 break;
             case R.id.nav_gallery:
                 fragment = new CategoriasFragment();
                 title = "Categories";
-                finish();
+
                 break;
             case R.id.nav_slideshow:
                 fragment = new AlbumesFragment();
                 title = "Albums";
-                finish();
+
                 break;
            case R.id.nav_share:
-               finish();
+               
                fragment = new PerfilFragment();
         }
         if (fragment != null) {
