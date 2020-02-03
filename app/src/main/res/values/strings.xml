@@ -42,10 +42,15 @@
     <string name="elmalquerer" translatable="false">El mal querer</string>
 
     <array name="albumes_images">
-        <item>@drawable/bad</item>
-        <item>@drawable/dsotm</item>
-        <item>@drawable/elmalquerer</item>
-        <item>@drawable/encore</item>
+        <item>@drawable/ghostsi_iv</item>
+        <item>@drawable/theosocialnetwork</item>
+        <item>@drawable/theslip</item>
+        <item>@drawable/nonations</item>
+        <item>@drawable/governmentplates</item>
+        <item>@drawable/thefall</item>
+        <item>@drawable/wired</item>
+        <item>@drawable/nolovedeepweb</item>
+        <item>@drawable/thepowersthatb</item>
     </array>
     <string name="title_placeholder">Title</string>
     <string name="news_placeholder">News</string>
