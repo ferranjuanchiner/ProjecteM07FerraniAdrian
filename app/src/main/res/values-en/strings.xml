@@ -54,5 +54,9 @@
     <string name="tvUsernametext">Username</string>
     <string name="txtUser">Username:</string>
     <string name="btnCat" >.</string>
-    <string name="btnEng">.</string>
+    <string name="dscLogoApp">Logo de la aplicacion</string>
+    <string name="dscMainNom">Nombre de usuario</string>
+    <string name="dscMainPassword">Contraseña del usuario</string>
+    <string name="dscMainAccedir">Botón para hacer login</string>
+    <string name="dscMainRegistre">Botón para registrar el usuario</string>
 </resources>

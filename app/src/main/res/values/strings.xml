@@ -82,11 +82,17 @@
     <string name="mssgsaveduser" tools:ignore="DuplicateDefinition">Dades d\'usuari desades</string>
     <string name="idiomas" tools:ignore="DuplicateDefinition">Idiomes</string>
     <string name="filtre" tools:ignore="DuplicateDefinition">filtre...</string>
-    <string name="es" tools:ignore="DuplicateDefinition">Espanyol</string>
+    <string name="es" tools:ignore="DuplicateDefinition" translatable="false">Espanyol</string>
     <string name="errortermes" tools:ignore="DuplicateDefinition">S\'han d\'acceptar els termes d\'ús per poder continuar</string>
     <string name="errorregistre" tools:ignore="DuplicateDefinition">Has d\'introduir l\'usuari i contrassenya</string>
     <string name="errorlogin" tools:ignore="DuplicateDefinition">Dades d\'accés incorrectes</string>
     <string name="en" tools:ignore="DuplicateDefinition">Anglés</string>
     <string name="cat" tools:ignore="DuplicateDefinition">Català</string>
+    <string name="dscLogoApp">Logo de l\'aplicació</string>
+    <string name="btnCat">.</string>
+    <string name="dscMainNom">Nom d\'usuari</string>
+    <string name="dscMainPassword">Contrassenya de l\'usuari</string>
+    <string name="dscMainAccedir">Botó per fer login</string>
+    <string name="dscMainRegistre">Botó per registrar l\'usuari</string>
 
 </resources>

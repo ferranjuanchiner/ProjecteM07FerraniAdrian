@@ -54,5 +54,9 @@
     <string name="tvUsernametext">Usuari:</string>
     <string name="txtUser">Usuari:</string>
     <string name="btnCat" >.</string>
-    <string name="btnEng">.</string>
+    <string name="dscLogoApp">Logo de l\'aplicació</string>
+    <string name="dscMainNom">Nom d\'usuari</string>
+    <string name="dscMainPassword">Contrassenya de l\'usuari</string>
+    <string name="dscMainAccedir">Botó per fer login</string>
+    <string name="dscMainRegistre">Botó per registrar l\'usuari</string>
 </resources>

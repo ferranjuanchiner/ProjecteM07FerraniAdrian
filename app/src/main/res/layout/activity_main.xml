@@ -16,6 +16,7 @@
         android:layout_marginEnd="110dp"
         android:layout_marginRight="110dp"
         android:background="@drawable/button_border"
+        android:contentDescription="@string/dscMainAccedir"
         android:text="@string/btnLogintext"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
@@ -34,6 +35,7 @@
         android:layout_marginRight="110dp"
         android:layout_marginBottom="134dp"
         android:background="@drawable/button_border"
+        android:contentDescription="@string/dscMainRegistre"
         android:text="@string/btnRegistertext"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
@@ -53,7 +55,8 @@
         android:hint="@string/etPasswordhint"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/etUsername"
+        android:labelFor="@id/tvPassword"/>
 
     <EditText
         android:id="@+id/etUsername"
@@ -66,7 +69,8 @@
         android:hint="@string/etUsernamehint"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:labelFor="@id/tvUsername"/>
 
     <ImageView
         android:id="@+id/imageView2"
@@ -77,6 +81,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="115dp"
         android:layout_marginRight="115dp"
+        android:contentDescription="@string/dscLogoApp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -89,6 +94,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="221dp"
+        android:contentDescription="@string/dscMainNom"
         android:fontFamily="@font/audiowide"
         android:text="@string/tvUsernametext"
         android:textColor="@android:color/black"
@@ -103,6 +109,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="73dp"
+        android:contentDescription="@string/dscMainPassword"
         android:text="@string/tvPasswordtext"
         android:textColor="@android:color/black"
         android:textSize="20sp"
