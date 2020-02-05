@@ -1,15 +1,14 @@
 package cat.copernic.ferranjuan.projectem07ferraniadrian.ui.home;
 
-import android.content.res.TypedArray;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Spinner;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -17,9 +16,19 @@ import java.util.ArrayList;
 import cat.copernic.ferranjuan.projectem07ferraniadrian.Albumes;
 import cat.copernic.ferranjuan.projectem07ferraniadrian.AlbumesAdapter;
 import cat.copernic.ferranjuan.projectem07ferraniadrian.R;
+import cat.copernic.ferranjuan.projectem07ferraniadrian.ui.home.HomeViewModel;
 
+
+/**
+ * A simple {@link Fragment} subclass.
+ * Activities that contain this fragment must implement the
+ * {@link HomeFragment.OnFragmentInteractionListener} interface
+ * to handle interaction events.
+ * Use the {@link HomeFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
 public class HomeFragment extends Fragment {
-    Spinner sp;
+
     private HomeViewModel homeViewModel;
     private RecyclerView mRecyclerView;
     private ArrayList<Albumes> mAlbumesData;
@@ -58,30 +67,47 @@ public class HomeFragment extends Fragment {
     }
 
     @Override
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-       View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
 
-       mRecyclerView = rootView.findViewById(R.id.recyclerView);
-       RecyclerView.LayoutManager lm = new GridLayoutManager(getActivity(),2);
-       mRecyclerView.setLayoutManager(lm);
-       mAlbumesData = new ArrayList<>();
-       mAdapter = new AlbumesAdapter(getActivity(),mAlbumesData);
-       mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView = rootView.findViewById(R.id.recyclerView);
+        RecyclerView.LayoutManager lm = new GridLayoutManager(getActivity(), 2);
+        androidx.recyclerview.widget.GridLayoutManager gridLayout = new androidx.recyclerview.widget.GridLayoutManager(getActivity(), 2);
+        mRecyclerView.setLayoutManager(gridLayout);
+        mAlbumesData = new ArrayList<>();
+        mAdapter = new AlbumesAdapter(getActivity(), mAlbumesData);
+        mRecyclerView.setAdapter(mAdapter);
         // Inflate the layout for this fragment
         initializeData();
-        return inflater.inflate(R.layout.fragment_home,container,false);
+        return rootView;
 
     }
 
@@ -93,29 +119,24 @@ public class HomeFragment extends Fragment {
     }
 
     private void initializeData() {
-        // Get the resources from the XML file.
-        String[] albumesList = getResources()
-                .getStringArray(R.array.albums_titles);
 
-
-        // Clear the existing data (to avoid duplication).
-        mAlbumesData.clear();
-
-        // Create the ArrayList of Sports objects with titles and
-        // information about each sport.
-        for(int i=0;i<albumesList.length;i++){
-            TypedArray sportsImageResources =
-                    getResources().obtainTypedArray(R.array.albumes_images);
-            mAlbumesData.add(new Albumes(albumesList[i], sportsImageResources.getResourceId(i,0)));
-            sportsImageResources.recycle();
-
-        }
-
-        // Notify the adapter of the change.
-        mAdapter.notifyDataSetChanged();
+        mAlbumesData.add(new Albumes("Ghosts I–IV", R.drawable.ghostsi_iv));
+        mAlbumesData.add(new Albumes("The Social Network", R.drawable.theosocialnetwork));
+        mAlbumesData.add(new Albumes("The Slip", R.drawable.theslip));
+        mAlbumesData.add(new Albumes("No Nations", R.drawable.nonations));
+        mAlbumesData.add(new Albumes("Goverment Plates", R.drawable.governmentplates));
+        mAlbumesData.add(new Albumes("The Fall", R.drawable.thefall));
+        mAlbumesData.add(new Albumes("The Wired CD", R.drawable.wired));
+        mAlbumesData.add(new Albumes("No Love Deep Web", R.drawable.nolovedeepweb));
+        mAlbumesData.add(new Albumes("The Powers That B", R.drawable.thepowersthatb));
     }
 
     public void resetSports(View view) {
         initializeData();
+    }
+
+    public interface OnFragmentInteractionListener {
+        // TODO: Update argument type and name
+        void onFragmentInteraction(Uri uri);
     }
 }
