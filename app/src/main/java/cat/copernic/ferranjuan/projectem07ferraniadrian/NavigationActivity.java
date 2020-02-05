@@ -36,8 +36,8 @@ public class NavigationActivity extends AppCompatActivity
         setContentView(R.layout.activity_navigation);
 
         Fragment fragment = new HomeFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.nav_host_fragment,fragment).commit();
-       username = getIntent().getStringExtra("usuarioactual");
+        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,fragment).commit();
+        username = getIntent().getStringExtra("usuarioactual");
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -66,7 +66,7 @@ public class NavigationActivity extends AppCompatActivity
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-        displayView(R.id.nav_home);
+        displayView(R.id.nav_host_fragment);
     }
 
     @Override
@@ -98,23 +98,24 @@ public class NavigationActivity extends AppCompatActivity
 
                 break;
             case R.id.nav_gallery:
+
                 fragment = new CategoriasFragment();
                 title = "Categories";
 
                 break;
             case R.id.nav_slideshow:
+
                 fragment = new AlbumesFragment();
                 title = "Albums";
 
                 break;
            case R.id.nav_share:
-               
-               fragment = new PerfilFragment();
+                fragment = new PerfilFragment();
         }
         if (fragment != null) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.content_frame, fragment);
-            ft.commit();
+            //ft.commit();
         }
 
         // set the toolbar title
@@ -127,6 +128,7 @@ public class NavigationActivity extends AppCompatActivity
     }
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+        item.setChecked(true);
         displayView(item.getItemId());
         return true;
     }
