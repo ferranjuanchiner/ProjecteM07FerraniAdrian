@@ -117,15 +117,6 @@ public class HomeFragment extends Fragment {
 
     private void initializeData() {
 
-        mAlbumesData.add(new Albumes("Ghosts I–IV", R.drawable.ghostsi_iv));
-        mAlbumesData.add(new Albumes("The Social Network", R.drawable.theosocialnetwork));
-        mAlbumesData.add(new Albumes("The Slip", R.drawable.theslip));
-        mAlbumesData.add(new Albumes("No Nations", R.drawable.nonations));
-        mAlbumesData.add(new Albumes("Goverment Plates", R.drawable.governmentplates));
-        mAlbumesData.add(new Albumes("The Fall", R.drawable.thefall));
-        mAlbumesData.add(new Albumes("The Wired CD", R.drawable.wired));
-        mAlbumesData.add(new Albumes("No Love Deep Web", R.drawable.nolovedeepweb));
-        mAlbumesData.add(new Albumes("The Powers That B", R.drawable.thepowersthatb));
     }
 
     public void resetSports(View view) {
