@@ -47,7 +47,7 @@
     <string name="tvContrasena">Contraseña</string>
     <string name="tvIdiomas">Seleciona el idioma</string>
     <string name="tvNombre">Nombre</string>
-    <string name="tvPasswordtext">Apellido</string>
+    <string name="tvPasswordtext">Contraseña</string>
     <string name="tvUsernametext">Usuario:</string>
     <string name="txtUser">Usuario:</string>
     <string name="title_placeholder">.</string>
@@ -59,4 +59,7 @@
     <string name="dscMainPassword">User password</string>
     <string name="dscMainAccedir">Button for login</string>
     <string name="dscMainRegistre">Button for user registration</string>
+    <string name="dscBtnCat">Botó per cambiar l\'idioma a català</string>
+    <string name="dscBtnIng">Botò per cambiar l\'idioma a Anglés</string>
+    <string name="dscBtnEs">Botó per a cambiar l\'idioma a Espanyol</string>
 </resources>

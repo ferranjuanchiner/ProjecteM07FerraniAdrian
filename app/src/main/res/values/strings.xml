@@ -94,10 +94,13 @@
     <string name="en" tools:ignore="DuplicateDefinition">Anglés</string>
     <string name="cat" tools:ignore="DuplicateDefinition">Català</string>
     <string name="dscLogoApp">Logo de l\'aplicació</string>
-    <string name="btnCat">.</string>
+    <string name="btnCat" translatable="false">.</string>
     <string name="dscMainNom">Nom d\'usuari</string>
     <string name="dscMainPassword">Contrassenya de l\'usuari</string>
     <string name="dscMainAccedir">Botó per fer login</string>
     <string name="dscMainRegistre">Botó per registrar l\'usuari</string>
+    <string name="dscBtnCat">Botó per cambiar l\'idioma a català</string>
+    <string name="dscBtnIng">Botò per cambiar l\'idioma a Anglés</string>
+    <string name="dscBtnEs">Botó per a cambiar l\'idioma a Espanyol</string>
 
 </resources>

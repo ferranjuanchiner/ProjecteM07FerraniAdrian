@@ -59,4 +59,7 @@
     <string name="dscMainPassword">Contraseña del usuario</string>
     <string name="dscMainAccedir">Botón para hacer login</string>
     <string name="dscMainRegistre">Botón para registrar el usuario</string>
+    <string name="dscBtnCat">Botó per cambiar l\'idioma a català</string>
+    <string name="dscBtnIng">Botò per cambiar l\'idioma a Anglés</string>
+    <string name="dscBtnEs">Botó per a cambiar l\'idioma a Espanyol</string>
 </resources>
