@@ -1,5 +1,6 @@
 package cat.copernic.ferranjuan.projectem07ferraniadrian;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,7 +71,12 @@ public class AlbumesAdapter extends RecyclerView.Adapter<AlbumesAdapter.ViewHold
 
         @Override
         public void onClick(View v) {
-
+            Albumes currentSport = mAlbumesData.get(getAdapterPosition());
+            Intent detailIntent = new Intent(mContext, DetailActivity.class);
+            detailIntent.putExtra("title", currentSport.getTitle());
+            detailIntent.putExtra("image_resource",
+                    currentSport.getImageResource());
+            mContext.startActivity(detailIntent);
         }
     }
 }
