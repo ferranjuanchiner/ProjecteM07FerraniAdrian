@@ -121,7 +121,6 @@ public class HomeFragment extends Fragment {
     private void initializeData() {
 
         mAlbumesData.add(new Albumes("Ghosts I–IV", R.drawable.ghostsi_iv));
-        mAlbumesData.add(new Albumes("The Social Network", R.drawable.theosocialnetwork));
         mAlbumesData.add(new Albumes("The Slip", R.drawable.theslip));
         mAlbumesData.add(new Albumes("No Nations", R.drawable.nonations));
         mAlbumesData.add(new Albumes("Goverment Plates", R.drawable.governmentplates));
