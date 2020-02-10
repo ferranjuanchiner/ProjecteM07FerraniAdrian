@@ -22,10 +22,11 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
         TextView sportsTitle = findViewById(R.id.titleDetail);
         ImageView sportsImage = findViewById(R.id.sportsImageDetail);
+        TextView sportsSubtitle = findViewById(R.id.subTitleDetail);
         sportsTitle.setText(getIntent().getStringExtra("title"));
         Glide.with(this).load(getIntent().getIntExtra("image_resource",0))
                 .into(sportsImage);
-        sportsTitle.setOnClickListener(new View.OnClickListener() {
+        sportsSubtitle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try
