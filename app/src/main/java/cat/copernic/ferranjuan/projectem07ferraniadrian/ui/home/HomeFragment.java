@@ -5,10 +5,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Spinner;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import cat.copernic.ferranjuan.projectem07ferraniadrian.Albumes;
 import cat.copernic.ferranjuan.projectem07ferraniadrian.AlbumesAdapter;
 import cat.copernic.ferranjuan.projectem07ferraniadrian.R;
-import cat.copernic.ferranjuan.projectem07ferraniadrian.ui.home.HomeViewModel;
 
 
 /**
@@ -28,7 +27,7 @@ import cat.copernic.ferranjuan.projectem07ferraniadrian.ui.home.HomeViewModel;
  * create an instance of this fragment.
  */
 public class HomeFragment extends Fragment {
-
+    private Spinner spinner;
     private HomeViewModel homeViewModel;
     private RecyclerView mRecyclerView;
     private ArrayList<Albumes> mAlbumesData;
@@ -68,22 +67,6 @@ public class HomeFragment extends Fragment {
 
     @Override
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
@@ -104,6 +87,7 @@ public class HomeFragment extends Fragment {
         mRecyclerView.setLayoutManager(gridLayout);
         mAlbumesData = new ArrayList<>();
         mAdapter = new AlbumesAdapter(getActivity(), mAlbumesData);
+        spinner = rootView.findViewById(R.id.spinner);
         mRecyclerView.setAdapter(mAdapter);
         // Inflate the layout for this fragment
         initializeData();
