@@ -3,9 +3,11 @@ package cat.copernic.ferranjuan.projectem07ferraniadrian;
 public class Albumes {
     private String title;
     private final int imageResource;
-    public Albumes(String title, int imageResource) {
+    public Cancion cancion;
+    public Albumes(String title, int imageResource, Cancion cancion) {
         this.title = title;
         this.imageResource = imageResource;
+        this.cancion = cancion;
 
     }
     public String getTitle() {
@@ -15,8 +17,9 @@ public class Albumes {
     public int getImageResource() {
         return imageResource;
     }
+    public  Cancion getCancion(){return cancion;}
 
-    public class Cancion{
+    public static class Cancion{
         String nom;
         int file;
         public Cancion(String nom, int file){

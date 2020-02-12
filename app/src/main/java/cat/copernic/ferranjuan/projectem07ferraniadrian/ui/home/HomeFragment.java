@@ -2,7 +2,6 @@ package cat.copernic.ferranjuan.projectem07ferraniadrian.ui.home;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -104,15 +103,15 @@ public class HomeFragment extends Fragment {
 
     private void initializeData() {
 
-        mAlbumesData.add(new Albumes("Ghosts I–IV", R.drawable.ghostsi_iv));
-        mAlbumesData.add(new Albumes("The Slip", R.drawable.theslip));
-        mAlbumesData.add(new Albumes("No Nations", R.drawable.nonations));
+        mAlbumesData.add(new Albumes("Ghosts I–IV", R.drawable.ghostsi_iv, new Albumes.Cancion("Birds",R.raw.birds)));
+        mAlbumesData.add(new Albumes("The Slip", R.drawable.theslip, new Albumes.Cancion("Birds", R.raw.birds)));
+        mAlbumesData.add(new Albumes("No Nations", R.drawable.nonations, new Albumes.Cancion("Birds", R.raw.birds)));
 
-        mAlbumesData.add(new Albumes("Goverment Plates", R.drawable.governmentplates));
-        mAlbumesData.add(new Albumes("The Fall", R.drawable.thefall));
-        mAlbumesData.add(new Albumes("The Wired CD", R.drawable.wired));
-        mAlbumesData.add(new Albumes("No Love Deep Web", R.drawable.nolovedeepweb));
-        mAlbumesData.add(new Albumes("The Powers That B", R.drawable.thepowersthatb));
+        mAlbumesData.add(new Albumes("Goverment Plates", R.drawable.governmentplates, new Albumes.Cancion("Birds", R.raw.birds)));
+        mAlbumesData.add(new Albumes("The Fall", R.drawable.thefall, new Albumes.Cancion("Birds", R.raw.birds)));
+        mAlbumesData.add(new Albumes("The Wired CD", R.drawable.wired, new Albumes.Cancion("Birds", R.raw.birds)));
+        mAlbumesData.add(new Albumes("No Love Deep Web", R.drawable.nolovedeepweb, new Albumes.Cancion("Birds", R.raw.birds)));
+        mAlbumesData.add(new Albumes("The Powers That B", R.drawable.thepowersthatb, new Albumes.Cancion("Birds", R.raw.birds)));
     }
 
     public void resetSports(View view) {

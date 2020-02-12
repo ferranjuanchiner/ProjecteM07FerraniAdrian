@@ -24,13 +24,14 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         TextView AlbumesTitle = findViewById(R.id.titleDetail);
-        ImageView sportsImage = findViewById(R.id.albumImageDetail);
-        TextView sportsSubtitle = findViewById(R.id.subTitleDetail);
+        ImageView albumImage = findViewById(R.id.albumImageDetail);
+        TextView albumSubtitle = findViewById(R.id.subTitleDetail);
+
 
         AlbumesTitle.setText(getIntent().getStringExtra("title"));
         Glide.with(this).load(getIntent().getIntExtra("image_resource",0))
-                .into(sportsImage);
-        sportsSubtitle.setOnClickListener(new View.OnClickListener() {
+                .into(albumImage);
+        albumSubtitle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try
@@ -44,7 +45,7 @@ public class DetailActivity extends AppCompatActivity {
 
                     {
                         handler = new Handler();
-                        media = MediaPlayer.create(getApplicationContext(),R.raw.head_down );
+                        media = MediaPlayer.create(getApplicationContext(),R.raw.head_down);
                         media.start();
                        sBar = (SeekBar)findViewById(R.id.musicSeekBar);
                         sBar.setMax(media.getDuration());
