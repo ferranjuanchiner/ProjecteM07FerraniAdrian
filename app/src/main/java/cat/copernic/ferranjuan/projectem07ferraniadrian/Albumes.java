@@ -7,7 +7,7 @@ public class Albumes {
         this.title = title;
         this.imageResource = imageResource;
     }
-    String getTitle() {
+    public String getTitle() {
         return title;
     }
 
