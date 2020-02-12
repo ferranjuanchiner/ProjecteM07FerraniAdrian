@@ -7,11 +7,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.media.MediaPlayer;
-
-import com.bumptech.glide.Glide;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.bumptech.glide.Glide;
 
 public class DetailActivity extends AppCompatActivity {
     SeekBar sBar;
@@ -22,11 +21,11 @@ public class DetailActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        TextView sportsTitle = findViewById(R.id.titleDetail);
-        ImageView sportsImage = findViewById(R.id.sportsImageDetail);
+        TextView AlbumesTitle = findViewById(R.id.titleDetail);
+        ImageView sportsImage = findViewById(R.id.albumImageDetail);
         TextView sportsSubtitle = findViewById(R.id.subTitleDetail);
 
-        sportsTitle.setText(getIntent().getStringExtra("title"));
+        AlbumesTitle.setText(getIntent().getStringExtra("title"));
         Glide.with(this).load(getIntent().getIntExtra("image_resource",0))
                 .into(sportsImage);
         sportsSubtitle.setOnClickListener(new View.OnClickListener() {
