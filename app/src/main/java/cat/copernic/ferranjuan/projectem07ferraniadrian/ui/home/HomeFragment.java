@@ -2,6 +2,7 @@ package cat.copernic.ferranjuan.projectem07ferraniadrian.ui.home;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -123,6 +124,7 @@ public class HomeFragment extends Fragment {
         mAlbumesData.add(new Albumes("Ghosts I–IV", R.drawable.ghostsi_iv));
         mAlbumesData.add(new Albumes("The Slip", R.drawable.theslip));
         mAlbumesData.add(new Albumes("No Nations", R.drawable.nonations));
+
         mAlbumesData.add(new Albumes("Goverment Plates", R.drawable.governmentplates));
         mAlbumesData.add(new Albumes("The Fall", R.drawable.thefall));
         mAlbumesData.add(new Albumes("The Wired CD", R.drawable.wired));

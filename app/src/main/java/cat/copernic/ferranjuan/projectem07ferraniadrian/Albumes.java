@@ -6,8 +6,9 @@ public class Albumes {
     public Albumes(String title, int imageResource) {
         this.title = title;
         this.imageResource = imageResource;
+
     }
-    String getTitle() {
+    public String getTitle() {
         return title;
     }
 

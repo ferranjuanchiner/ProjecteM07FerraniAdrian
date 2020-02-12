@@ -3,6 +3,7 @@ package cat.copernic.ferranjuan.projectem07ferraniadrian;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
@@ -16,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class DetailActivity extends AppCompatActivity {
     SeekBar sBar;
     MediaPlayer media;
+    Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +44,15 @@ public class DetailActivity extends AppCompatActivity {
                     else
 
                     {
+                        handler = new Handler();
                         media = MediaPlayer.create(getApplicationContext(),R.raw.head_down );
                         media.start();
                        sBar = (SeekBar)findViewById(R.id.musicSeekBar);
                         sBar.setMax(media.getDuration());
+                        int mediaPos = media.getCurrentPosition();
+                        sBar.setProgress(mediaPos);// set current progress to song's
+                        handler.removeCallbacks(moveSeekBarThread);
+                        handler.postDelayed(moveSeekBarThread, 100);
                         sBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
                             boolean userTouch;
@@ -67,7 +74,23 @@ public class DetailActivity extends AppCompatActivity {
                 } catch(Exception e) {
 
                 }
+
             }
+            private Runnable moveSeekBarThread = new Runnable() {
+
+                public void run() {
+                    if(media.isPlaying()){
+
+                        int mediaPos_new = media.getCurrentPosition();
+                        int mediaMax_new = media.getDuration();
+                        sBar.setMax(mediaMax_new);
+                        sBar.setProgress(mediaPos_new);
+
+                        handler.postDelayed(this, 100); //Looping the thread after 0.1 second
+                        // seconds
+                    }
+                }
+            };
 
         });
 
