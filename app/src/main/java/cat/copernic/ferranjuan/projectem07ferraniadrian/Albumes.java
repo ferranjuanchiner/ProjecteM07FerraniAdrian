@@ -14,4 +14,19 @@ public class Albumes {
     public int getImageResource() {
         return imageResource;
     }
+
+    public class Cancion{
+        String nom;
+        int file;
+        public Cancion(String nom, int file){
+            this.nom = nom;
+            this.file = file;
+        }
+        public String getNom(){
+            return nom;
+        }
+        public int getFile(){
+            return file;
+        }
+    }
 }
