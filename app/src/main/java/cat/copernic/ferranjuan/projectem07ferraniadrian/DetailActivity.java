@@ -23,12 +23,13 @@ public class DetailActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        TextView AlbumesTitle = findViewById(R.id.titleDetail);
+        TextView albumesTitle = findViewById(R.id.titleDetail);
         ImageView albumImage = findViewById(R.id.albumImageDetail);
         TextView albumSubtitle = findViewById(R.id.subTitleDetail);
 
 
-        AlbumesTitle.setText(getIntent().getStringExtra("title"));
+        albumesTitle.setText(getIntent().getStringExtra("title"));
+        albumSubtitle.setText(getIntent().getStringExtra("cancion_name"));
         Glide.with(this).load(getIntent().getIntExtra("image_resource",0))
                 .into(albumImage);
         albumSubtitle.setOnClickListener(new View.OnClickListener() {
