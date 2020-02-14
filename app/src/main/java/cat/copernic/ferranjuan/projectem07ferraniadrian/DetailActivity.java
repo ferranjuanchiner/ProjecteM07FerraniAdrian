@@ -45,7 +45,7 @@ public class DetailActivity extends AppCompatActivity {
 
                     {
                         handler = new Handler();
-                        media = MediaPlayer.create(getApplicationContext(),R.raw.head_down);
+                        media = MediaPlayer.create(getApplicationContext(),getIntent().getIntExtra("cancion_file",0));
                         media.start();
                        sBar = (SeekBar)findViewById(R.id.musicSeekBar);
                         sBar.setMax(media.getDuration());

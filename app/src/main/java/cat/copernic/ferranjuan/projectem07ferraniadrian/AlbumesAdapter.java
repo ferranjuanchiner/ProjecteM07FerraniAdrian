@@ -76,6 +76,10 @@ public class AlbumesAdapter extends RecyclerView.Adapter<AlbumesAdapter.ViewHold
             detailIntent.putExtra("title", currentSport.getTitle());
             detailIntent.putExtra("image_resource",
                     currentSport.getImageResource());
+            detailIntent.putExtra("cancion_name",
+                    currentSport.getCancion().getNom());
+            detailIntent.putExtra("cancion_file",
+                    currentSport.getCancion().getFile());
             mContext.startActivity(detailIntent);
         }
     }
