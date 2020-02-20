@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">ProjecteM07FerraniAdrian</string>
     <string name="titol">Inicia Sessió</string>
-    <string name="etUsernamehint">Usuari</string>
+    <string name="etUsernamehint">Email</string>
     <string name="etPasswordhint">Contrassenya</string>
     <string name="btnLogintext">Accedir</string>
     <string name="btnRegistertext">Registrar</string>
@@ -87,7 +87,7 @@
     <string name="mssgsaveduser" tools:ignore="DuplicateDefinition">Dades d\'usuari desades</string>
     <string name="idiomas" tools:ignore="DuplicateDefinition">Idiomes</string>
     <string name="filtre" tools:ignore="DuplicateDefinition">filtre...</string>
-    <string name="es" tools:ignore="DuplicateDefinition" translatable="false">Espanyol</string>
+    <string name="es" tools:ignore="DuplicateDefinition">Espanyol</string>
     <string name="errortermes" tools:ignore="DuplicateDefinition">S\'han d\'acceptar els termes d\'ús per poder continuar</string>
     <string name="errorregistre" tools:ignore="DuplicateDefinition">Has d\'introduir l\'usuari i contrassenya</string>
     <string name="errorlogin" tools:ignore="DuplicateDefinition">Dades d\'accés incorrectes</string>
@@ -102,5 +102,8 @@
     <string name="dscBtnCat">Botó per cambiar l\'idioma a català</string>
     <string name="dscBtnIng">Botò per cambiar l\'idioma a Anglés</string>
     <string name="dscBtnEs">Botó per a cambiar l\'idioma a Espanyol</string>
+    <string name="loginCorrecte">S\'ha accedit correctament</string>
+    <string name="etMail">Email</string>
+    <string name="registreCorrecte">S\'ha registrat correctament</string>
 
 </resources>

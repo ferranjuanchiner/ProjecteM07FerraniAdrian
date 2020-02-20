@@ -19,7 +19,7 @@
     <string name="etPass">Contraseña</string>
     <string name="etPasswordhint">Contraseña</string>
     <string name="etSwitch">Modo noche/dia</string>
-    <string name="etUsernamehint">Usuario</string>
+    <string name="etUsernamehint">Email</string>
     <string name="filtre">filtro...</string>
     <string name="genero">Genero:</string>
     <string name="hello_blank_fragment">.</string>
@@ -53,13 +53,15 @@
     <string name="title_placeholder">.</string>
     <string name="title_activity_register2">.</string>
     <string name="title_activity_navigation">.</string>
-    <string name="btnCat">.</string>
-    <string name="dscLogoApp">Aplication logo</string>
-    <string name="dscMainNom">"Username "</string>
-    <string name="dscMainPassword">User password</string>
-    <string name="dscMainAccedir">Button for login</string>
-    <string name="dscMainRegistre">Button for user registration</string>
-    <string name="dscBtnCat">Botó per cambiar l\'idioma a català</string>
-    <string name="dscBtnIng">Botò per cambiar l\'idioma a Anglés</string>
-    <string name="dscBtnEs">Botó per a cambiar l\'idioma a Espanyol</string>
+    <string name="dscLogoApp">Logo de la aplicacion</string>
+    <string name="dscMainNom">"Nombre de usuario "</string>
+    <string name="dscMainPassword">Contraseña del usuario</string>
+    <string name="dscMainAccedir">Boton para iniciar sesión</string>
+    <string name="dscMainRegistre">Botón para registrar el usuario</string>
+    <string name="dscBtnCat">Botón para cambiar el idioma a catalán</string>
+    <string name="dscBtnIng">Botón para cambiar el idioma a inglés</string>
+    <string name="dscBtnEs">Botón para cambiar el idioma a castellano</string>
+    <string name="loginCorrecte">Se ha accedido correctamente</string>
+    <string name="etMail">Email</string>
+    <string name="registreCorrecte">Se ha registrado correctamente</string>
 </resources>

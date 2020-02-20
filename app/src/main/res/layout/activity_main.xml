@@ -97,7 +97,7 @@
         android:contentDescription="@string/dscMainNom"
         android:fontFamily="@font/audiowide"
         android:text="@string/tvUsernametext"
-        android:textColor="@android:color/black"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -111,7 +111,7 @@
         android:layout_marginTop="73dp"
         android:contentDescription="@string/dscMainPassword"
         android:text="@string/tvPasswordtext"
-        android:textColor="@android:color/black"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvUsername" />

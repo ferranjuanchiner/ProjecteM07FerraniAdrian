@@ -19,7 +19,7 @@
     <string name="etPass">Contrassenya</string>
     <string name="etPasswordhint">Contrassenya</string>
     <string name="etSwitch">Mode nit/dia</string>
-    <string name="etUsernamehint">Usuari</string>
+    <string name="etUsernamehint">Email</string>
     <string name="filtre">filtre...</string>
     <string name="genero">Genere:</string>
     <string name="hello_blank_fragment">.</string>
@@ -53,7 +53,6 @@
     <string name="tvPasswordtext">Contrassenya</string>
     <string name="tvUsernametext">Usuari:</string>
     <string name="txtUser">Usuari:</string>
-    <string name="btnCat" >.</string>
     <string name="dscLogoApp">Logo de l\'aplicació</string>
     <string name="dscMainNom">Nom d\'usuari</string>
     <string name="dscMainPassword">Contrassenya de l\'usuari</string>
@@ -62,4 +61,7 @@
     <string name="dscBtnCat">Botó per cambiar l\'idioma a català</string>
     <string name="dscBtnIng">Botò per cambiar l\'idioma a Anglés</string>
     <string name="dscBtnEs">Botó per a cambiar l\'idioma a Espanyol</string>
+    <string name="loginCorrecte">S\'ha accedit correctament</string>
+    <string name="etMail">Email</string>
+    <string name="registreCorrecte">S\'ha registrat correctament</string>
 </resources>

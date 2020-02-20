@@ -19,7 +19,7 @@
     <string name="etPass">Password</string>
     <string name="etPasswordhint">Password</string>
     <string name="etSwitch">Night/Day Mode:</string>
-    <string name="etUsernamehint">User</string>
+    <string name="etUsernamehint">Email</string>
     <string name="filtre">filter...</string>
     <string name="genero">Gender:</string>
     <string name="hello_blank_fragment">.</string>
@@ -53,13 +53,15 @@
     <string name="tvPasswordtext">Password</string>
     <string name="tvUsernametext">Username</string>
     <string name="txtUser">Username:</string>
-    <string name="btnCat" >.</string>
-    <string name="dscLogoApp">Logo de la aplicacion</string>
-    <string name="dscMainNom">Nombre de usuario</string>
-    <string name="dscMainPassword">Contraseña del usuario</string>
-    <string name="dscMainAccedir">Botón para hacer login</string>
-    <string name="dscMainRegistre">Botón para registrar el usuario</string>
-    <string name="dscBtnCat">Botó per cambiar l\'idioma a català</string>
-    <string name="dscBtnIng">Botò per cambiar l\'idioma a Anglés</string>
-    <string name="dscBtnEs">Botó per a cambiar l\'idioma a Espanyol</string>
+    <string name="dscLogoApp">Aplication logo</string>
+    <string name="dscMainNom">Username</string>
+    <string name="dscMainPassword">User password</string>
+    <string name="dscMainAccedir">Button for login</string>
+    <string name="dscMainRegistre">Button for user registration</string>
+    <string name="dscBtnCat">Button for change language to catalan</string>
+    <string name="dscBtnIng">Button for change language to english</string>
+    <string name="dscBtnEs">Button for change language to spanish</string>
+    <string name="loginCorrecte">Login successfull</string>
+    <string name="etMail">Email</string>
+    <string name="registreCorrecte">Registration successfull</string>
 </resources>
