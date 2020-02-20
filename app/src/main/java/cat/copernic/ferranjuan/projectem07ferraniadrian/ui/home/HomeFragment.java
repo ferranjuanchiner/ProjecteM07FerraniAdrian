@@ -109,7 +109,7 @@ public class HomeFragment extends Fragment {
         mAlbumesData.add(new Albumes("Goverment Plates", R.drawable.governmentplates, new Albumes.Cancion("Birds", R.raw.birds)));
         mAlbumesData.add(new Albumes("The Fall", R.drawable.thefall, new Albumes.Cancion("Detroit", R.raw.detroit)));
         mAlbumesData.add(new Albumes("The Wired CD", R.drawable.wired, new Albumes.Cancion("Now Get Busy", R.raw.now_get_busy)));
-        mAlbumesData.add(new Albumes("No Love Deep Web", R.drawable.nolovedeepweb, new Albumes.Cancion("Come Up and Get Me", R.raw.birds)));
+        mAlbumesData.add(new Albumes("No Love Deep Web", R.drawable.nolovedeepweb, new Albumes.Cancion("Come Up and Get Me", R.raw.come_up_and_g)));
         mAlbumesData.add(new Albumes("The Powers That B", R.drawable.thepowersthatb, new Albumes.Cancion("Up My Sleeves", R.raw.up_my_sleevesw)));
     }
 
