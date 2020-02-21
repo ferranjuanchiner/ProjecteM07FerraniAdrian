@@ -39,7 +39,7 @@ public class HomeFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private cat.copernic.ferranjuan.projectem07ferraniadrian.HomeFragment.OnFragmentInteractionListener mListener;
+    private cat.copernic.ferranjuan.projectem07ferraniadrian.ui.home.HomeFragment.OnFragmentInteractionListener mListener;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -54,8 +54,8 @@ public class HomeFragment extends Fragment {
      * @return A new instance of fragment HomeFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static cat.copernic.ferranjuan.projectem07ferraniadrian.HomeFragment newInstance(String param1, String param2) {
-        cat.copernic.ferranjuan.projectem07ferraniadrian.HomeFragment fragment = new cat.copernic.ferranjuan.projectem07ferraniadrian.HomeFragment();
+    public static cat.copernic.ferranjuan.projectem07ferraniadrian.ui.home.HomeFragment newInstance(String param1, String param2) {
+        cat.copernic.ferranjuan.projectem07ferraniadrian.ui.home.HomeFragment fragment = new cat.copernic.ferranjuan.projectem07ferraniadrian.ui.home.HomeFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -113,9 +113,6 @@ public class HomeFragment extends Fragment {
         mAlbumesData.add(new Albumes("The Powers That B", R.drawable.thepowersthatb, new Albumes.Cancion("Up My Sleeves", R.raw.up_my_sleevesw)));
     }
 
-    public void resetSports(View view) {
-        initializeData();
-    }
 
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name

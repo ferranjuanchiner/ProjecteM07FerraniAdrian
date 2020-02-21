@@ -20,6 +20,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 
+import cat.copernic.ferranjuan.projectem07ferraniadrian.ui.home.HomeFragment;
 import cat.copernic.ferranjuan.projectem07ferraniadrian.ui.send.PerfilFragment;
 
 public class NavigationActivity extends AppCompatActivity
@@ -88,8 +89,8 @@ public class NavigationActivity extends AppCompatActivity
 
     public void displayView(int viewId) {
 
-        Fragment fragment = null;
-        String title = getString(R.string.app_name);
+        Fragment fragment = new HomeFragment();
+        String title = "Inici";
 
        switch (viewId) {
             case R.id.nav_home:

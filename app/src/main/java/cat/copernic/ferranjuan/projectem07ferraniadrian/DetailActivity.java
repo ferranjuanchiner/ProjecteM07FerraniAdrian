@@ -5,6 +5,8 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -26,29 +28,33 @@ public class DetailActivity extends AppCompatActivity {
         TextView albumesTitle = findViewById(R.id.titleDetail);
         ImageView albumImage = findViewById(R.id.albumImageDetail);
         TextView albumSubtitle = findViewById(R.id.subTitleDetail);
+        Button playpause = findViewById(R.id.buttonplaypause);
+        ImageButton play = findViewById(R.id.imageButton);
+        ImageButton pause = findViewById(R.id.imageButton2);
 
 
         albumesTitle.setText(getIntent().getStringExtra("title"));
         albumSubtitle.setText(getIntent().getStringExtra("cancion_name"));
-        Glide.with(this).load(getIntent().getIntExtra("image_resource",0))
+        Glide.with(this).load(getIntent().getIntExtra("image_resource", 0))
                 .into(albumImage);
-        albumSubtitle.setOnClickListener(new View.OnClickListener() {
+       playpause.setOnClickListener(new View.OnClickListener() {
             @Override
+
             public void onClick(View v) {
-                try
-                {
-                    if (media != null && media.isPlaying())
-                    {
+                try {
 
-                        media.stop();
-                    }
-                    else
+                    if (media != null && media.isPlaying()) {
 
-                    {
+                        media.pause();
+                        findViewById(R.id.imageButton2).setVisibility(ImageButton.GONE);
+                        findViewById(R.id.imageButton).setVisibility(ImageButton.VISIBLE);
+                    } else if  (media==null){
                         handler = new Handler();
-                        media = MediaPlayer.create(getApplicationContext(),getIntent().getIntExtra("cancion_file",0));
+                        media = MediaPlayer.create(getApplicationContext(), getIntent().getIntExtra("cancion_file", 0));
                         media.start();
-                       sBar = (SeekBar)findViewById(R.id.musicSeekBar);
+                        findViewById(R.id.imageButton).setVisibility(ImageButton.GONE);
+                        findViewById(R.id.imageButton2).setVisibility(ImageButton.VISIBLE);
+                        sBar = (SeekBar) findViewById(R.id.musicSeekBar);
                         sBar.setMax(media.getDuration());
                         int mediaPos = media.getCurrentPosition();
                         sBar.setProgress(mediaPos);// set current progress to song's
@@ -57,30 +63,40 @@ public class DetailActivity extends AppCompatActivity {
                         sBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
                             boolean userTouch;
+
                             @Override
                             public void onStopTrackingTouch(SeekBar arg0) {
                                 userTouch = false;
                             }
+
                             @Override
                             public void onStartTrackingTouch(SeekBar arg0) {
                                 userTouch = true;
                             }
+
                             @Override
                             public void onProgressChanged(SeekBar arg0, int arg1, boolean arg2) {
-                                if(media.isPlaying() && arg2)
+                                if (media.isPlaying() && arg2)
                                     media.seekTo(arg1);
                             }
                         });
                     }
-                } catch(Exception e) {
+                    else{
+                        media.seekTo(media.getCurrentPosition());
+                        media.start();
+                        findViewById(R.id.imageButton).setVisibility(ImageButton.GONE);
+                        findViewById(R.id.imageButton2).setVisibility(ImageButton.VISIBLE);
+                    }
+                } catch (Exception e) {
 
                 }
 
             }
+
             private Runnable moveSeekBarThread = new Runnable() {
 
                 public void run() {
-                    if(media.isPlaying()){
+                    if (media.isPlaying()) {
 
                         int mediaPos_new = media.getCurrentPosition();
                         int mediaMax_new = media.getDuration();
