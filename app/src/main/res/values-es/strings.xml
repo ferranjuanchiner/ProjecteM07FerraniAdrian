@@ -64,4 +64,6 @@
     <string name="loginCorrecte">Se ha accedido correctamente</string>
     <string name="etMail">Email</string>
     <string name="registreCorrecte">Se ha registrado correctamente</string>
+    <string name="Email">Email</string>
+    <string name="contrasenaIncorrecta">La contraseña tiene que ser de un mínimo de 6 caracteres</string>
 </resources>

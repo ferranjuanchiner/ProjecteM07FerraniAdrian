@@ -105,5 +105,7 @@
     <string name="loginCorrecte">S\'ha accedit correctament</string>
     <string name="etMail">Email</string>
     <string name="registreCorrecte">S\'ha registrat correctament</string>
+    <string name="Email">Email</string>
+    <string name="contrasenaIncorrecta">La contrassenya ha de ser mínim de 6 caracters</string>
 
 </resources>

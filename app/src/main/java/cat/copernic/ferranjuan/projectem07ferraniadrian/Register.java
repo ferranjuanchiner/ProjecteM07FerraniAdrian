@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -19,17 +20,25 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 public class Register extends AppCompatActivity {
     String TAG = "Meteocleta_signup";
     EditText usuario;
     EditText pass;
     EditText email;
+    EditText nom;
+    EditText cognom;
     Button btnRegistrarse;
     Button btnCancelar;
+    RadioGroup genere;
     private FirebaseAuth mAuth;
+    DatabaseReference myRef;
     private FirebaseAuth.AuthStateListener mAuthListener;
     CheckBox cBox;
     @Override
@@ -43,7 +52,8 @@ public class Register extends AppCompatActivity {
         cBox = findViewById(R.id.cbTerminos);
         mAuth = FirebaseAuth.getInstance();
         email = findViewById(R.id.etEmail);
-
+        cognom = findViewById(R.id.etApellido);
+        genere = findViewById(R.id.radioGroup);
 
         btnRegistrarse.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -54,6 +64,8 @@ public class Register extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
             }else if(cBox.isChecked()==false){
                 Toast.makeText(Register.this,R.string.errortermes,Toast.LENGTH_SHORT).show();
+            }else if(pass.length()< 6){
+                Toast.makeText(Register.this,R.string.contrasenaIncorrecta,Toast.LENGTH_SHORT).show();
             }
             else {
                 /*final String username = usuario.getText().toString();
@@ -82,8 +94,10 @@ public class Register extends AppCompatActivity {
                             Toast.makeText(Register.this,R.string.registreCorrecte,Toast.LENGTH_SHORT).show();
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
+                            añadirDatos();
                             finish();
-                        } else {
+                        }
+                        else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
                             Toast.makeText(Register.this, "Failed! try again",
@@ -147,5 +161,19 @@ public class Register extends AppCompatActivity {
         Intent esp = new Intent(getApplicationContext(), MainActivity.class);
         esp.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(esp);
+    }
+    private void añadirDatos() {
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("usuarios/" + mAuth.getUid());
+        Map<String, Object> datosUsuario = new HashMap<>();
+        datosUsuario.put("nombre",nom.getText().toString());
+        datosUsuario.put("cognom",cognom.getText().toString());
+        datosUsuario.put("genere",genere.getFocusedChild().toString());
+        myRef.child("datos").push().setValue(datosUsuario);
+        Toast.makeText(getApplicationContext(), "Successful sign up!", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+
     }
 }

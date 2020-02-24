@@ -131,13 +131,13 @@
         app:layout_constraintTop_toBottomOf="@+id/etApellido">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/rbDona"
             android:layout_width="91dp"
             android:layout_height="wrap_content"
             android:text="@string/mujer" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/rbHome"
             android:layout_width="121dp"
             android:layout_height="42dp"
             android:text="@string/hombre" />
@@ -278,7 +278,7 @@
         android:layout_marginStart="19dp"
         android:layout_marginLeft="19dp"
         android:layout_marginTop="50dp"
-        android:text="TextView"
+        android:text="@string/Email"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
