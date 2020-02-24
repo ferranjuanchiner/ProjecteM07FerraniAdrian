@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -44,5 +45,36 @@
         android:layout_width="368dp"
         android:layout_height="match_parent"
         android:layout_below="@id/subTitleDetail"/>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="88dp"
+        android:layout_height="53dp"
+        android:layout_below="@id/newsTitleDetail"
+        android:layout_marginLeft="-2dp"
+        android:layout_toRightOf="@id/subTitleDetail"
+        android:background="@android:color/transparent"
+        android:src="@android:drawable/ic_media_play"
+        android:tint="@color/colorPrimaryDark" />
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="88dp"
+        android:layout_height="53dp"
+        android:layout_below="@id/newsTitleDetail"
+        android:layout_marginLeft="-2dp"
+        android:layout_toRightOf="@id/subTitleDetail"
+        android:background="@android:color/transparent"
+        android:src="@android:drawable/ic_media_pause"
+        android:tint="@color/colorPrimaryDark"
+        android:visibility="invisible"/>
+
+    <Button
+        android:id="@+id/buttonplaypause"
+        android:layout_width="88dp"
+        android:layout_height="53dp"
+        android:layout_below="@id/newsTitleDetail"
+        android:layout_marginLeft="-2dp"
+        android:layout_toRightOf="@id/subTitleDetail"
+        android:background="@android:color/transparent" />
 </RelativeLayout>
 </ScrollView>
