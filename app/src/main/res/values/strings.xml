@@ -70,7 +70,6 @@
         <item>@string/filtre</item>
         <item>@string/orderaz</item>
         <item>@string/orderza</item>
-        <item>@string/odercategories</item>
     </string-array>
     <string-array name="idiomas">
         <item>@string/idiomas</item>

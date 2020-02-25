@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Spinner;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -30,6 +31,7 @@ public class HomeFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private ArrayList<Albumes> mAlbumesData;
     private AlbumesAdapter mAdapter;
+    Spinner spinneroder;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -82,17 +84,26 @@ public class HomeFragment extends Fragment {
         mRecyclerView = rootView.findViewById(R.id.recyclerView);
         RecyclerView.LayoutManager lm = new GridLayoutManager(getActivity(), 2);
         GridLayoutManager gridLayout = new GridLayoutManager(getActivity(), 2);
+        spinneroder = rootView.findViewById(R.id.spinner);
         mRecyclerView.setLayoutManager(gridLayout);
         mAlbumesData = new ArrayList<>();
         mAdapter = new AlbumesAdapter(getActivity(), mAlbumesData);
         mRecyclerView.setAdapter(mAdapter);
+
         // Inflate the layout for this fragment
-        initializeData();
+        if(spinneroder.getSelectedItem().toString().equals(R.string.orderza) ){
+        initializeDataza();}
+        else if(spinneroder.getSelectedItem().toString().equals(R.string.orderaz)){
+            initializeDataaz();}
+        else {
+            initializeData();}
         return rootView;
 
 
 
     }
+
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -112,6 +123,30 @@ public class HomeFragment extends Fragment {
         mAlbumesData.add(new Albumes("No Love Deep Web", R.drawable.nolovedeepweb, new Albumes.Cancion("Come Up and Get Me", R.raw.come_up_and_g)));
         mAlbumesData.add(new Albumes("The Powers That B", R.drawable.thepowersthatb, new Albumes.Cancion("Up My Sleeves", R.raw.up_my_sleevesw)));
     }
+    private void initializeDataaz() {
+
+        mAlbumesData.add(new Albumes("Ghosts I–IV", R.drawable.ghostsi_iv, new Albumes.Cancion("Ghosts I",R.raw.ghosts_i)));
+        mAlbumesData.add(new Albumes("Goverment Plates", R.drawable.governmentplates, new Albumes.Cancion("Birds", R.raw.birds)));
+        mAlbumesData.add(new Albumes("No Love Deep Web", R.drawable.nolovedeepweb, new Albumes.Cancion("Come Up and Get Me", R.raw.come_up_and_g)));
+        mAlbumesData.add(new Albumes("No Nations", R.drawable.nonations, new Albumes.Cancion("I Should Be Born", R.raw.i_should_be_born)));
+        mAlbumesData.add(new Albumes("The Fall", R.drawable.thefall, new Albumes.Cancion("Detroit", R.raw.detroit)));
+        mAlbumesData.add(new Albumes("The Powers That B", R.drawable.thepowersthatb, new Albumes.Cancion("Up My Sleeves", R.raw.up_my_sleevesw)));
+        mAlbumesData.add(new Albumes("The Slip", R.drawable.theslip, new Albumes.Cancion("Head Down", R.raw.head_down)));
+        mAlbumesData.add(new Albumes("The Wired CD", R.drawable.wired, new Albumes.Cancion("Now Get Busy", R.raw.now_get_busy)));
+    }
+    private void initializeDataza() {
+
+        mAlbumesData.add(new Albumes("The Wired CD", R.drawable.wired, new Albumes.Cancion("Now Get Busy", R.raw.now_get_busy)));
+        mAlbumesData.add(new Albumes("The Slip", R.drawable.theslip, new Albumes.Cancion("Head Down", R.raw.head_down)));
+        mAlbumesData.add(new Albumes("The Powers That B", R.drawable.thepowersthatb, new Albumes.Cancion("Up My Sleeves", R.raw.up_my_sleevesw)));
+        mAlbumesData.add(new Albumes("The Fall", R.drawable.thefall, new Albumes.Cancion("Detroit", R.raw.detroit)));
+        mAlbumesData.add(new Albumes("No Nations", R.drawable.nonations, new Albumes.Cancion("I Should Be Born", R.raw.i_should_be_born)));
+        mAlbumesData.add(new Albumes("No Love Deep Web", R.drawable.nolovedeepweb, new Albumes.Cancion("Come Up and Get Me", R.raw.come_up_and_g)));
+        mAlbumesData.add(new Albumes("Goverment Plates", R.drawable.governmentplates, new Albumes.Cancion("Birds", R.raw.birds)));
+        mAlbumesData.add(new Albumes("Ghosts I–IV", R.drawable.ghostsi_iv, new Albumes.Cancion("Ghosts I",R.raw.ghosts_i)));
+    }
+
+
 
 
     public interface OnFragmentInteractionListener {
