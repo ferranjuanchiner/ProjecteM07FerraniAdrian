@@ -29,7 +29,7 @@ import java.util.Locale;
 import java.util.Map;
 
 public class Register extends AppCompatActivity {
-    String TAG = "Meteocleta_signup";
+    String TAG = "Musikapp_register";
     EditText usuario;
     EditText pass;
     EditText email;
