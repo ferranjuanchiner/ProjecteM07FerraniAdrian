@@ -81,12 +81,19 @@ public class HomeFragment extends Fragment {
     }
 
     private void afegirAlbums() {
+        mAuth = FirebaseAuth.getInstance();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        myRef = database.getReference("albums/"+"/album1");
+        myRef = database.getReference("albums/"+mAuth.getUid()+"/album1/");
         myRef.child("nom").setValue("Ghosts I–IV");
         myRef.child("img").setValue(R.drawable.ghostsi_iv);
         myRef.child("nomCanço").setValue("Ghosts I");
         myRef.child("canço").setValue(R.raw.ghosts_i);
+
+        myRef = database.getReference("albums/"+mAuth.getUid()+"/album2/");
+        myRef.child("nom").setValue("The Slip");
+        myRef.child("img").setValue(R.drawable.theslip);
+        myRef.child("nomCanço").setValue("Head Down");
+        myRef.child("canço").setValue(R.raw.head_down);
     }
 
     @Override
