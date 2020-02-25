@@ -87,7 +87,7 @@
         app:layout_constraintTop_toBottomOf="@+id/etUser" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/etNom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
@@ -113,7 +113,7 @@
         android:hint="@string/etApellido"
         android:inputType="textPersonName|textCapSentences"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+        app:layout_constraintTop_toBottomOf="@+id/etNom" />
 
 
     <RadioGroup

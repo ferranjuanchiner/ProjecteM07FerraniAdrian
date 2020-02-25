@@ -11,6 +11,10 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 
 import cat.copernic.ferranjuan.projectem07ferraniadrian.Albumes;
@@ -40,6 +44,8 @@ public class HomeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private FirebaseAuth mAuth;
+    DatabaseReference myRef;
 
     private cat.copernic.ferranjuan.projectem07ferraniadrian.ui.home.HomeFragment.OnFragmentInteractionListener mListener;
 
@@ -73,6 +79,16 @@ public class HomeFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        afegirAlbums();
+    }
+
+    private void afegirAlbums() {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("albums/"+"/album1");
+        myRef.child("nom").setValue("Ghosts I–IV");
+        myRef.child("img").setValue(R.drawable.ghostsi_iv);
+        myRef.child("nomCanço").setValue("Ghosts I");
+        myRef.child("canço").setValue(R.raw.ghosts_i);
     }
 
     @Override
