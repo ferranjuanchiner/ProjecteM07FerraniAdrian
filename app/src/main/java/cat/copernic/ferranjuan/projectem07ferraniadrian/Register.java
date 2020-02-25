@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -47,6 +48,7 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.register);
         usuario = findViewById(R.id.etUser);
         pass = findViewById(R.id.etpassword);
+        nom = findViewById(R.id.etNom);
         btnRegistrarse = findViewById(R.id.btnRegistro);
         btnCancelar = findViewById(R.id.btnCancelar);
         cBox = findViewById(R.id.cbTerminos);
@@ -163,14 +165,19 @@ public class Register extends AppCompatActivity {
         startActivity(esp);
     }
     private void añadirDatos() {
+        int radioButtonId = genere.getCheckedRadioButtonId();
+        View radioButton = genere.findViewById(radioButtonId);
+        int indice = genere.indexOfChild(radioButton);
+        RadioButton rb = (RadioButton)  genere.getChildAt(indice);
         mAuth = FirebaseAuth.getInstance();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         myRef = database.getReference("usuarios/" + mAuth.getUid());
         Map<String, Object> datosUsuario = new HashMap<>();
         datosUsuario.put("nombre",nom.getText().toString());
         datosUsuario.put("cognom",cognom.getText().toString());
-        datosUsuario.put("genere",genere.getFocusedChild().toString());
+        datosUsuario.put("genere",rb.getText().toString());
         myRef.child("datos").push().setValue(datosUsuario);
+
         Toast.makeText(getApplicationContext(), "Successful sign up!", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(intent);

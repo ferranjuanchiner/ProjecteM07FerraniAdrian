@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "206569074543-snh02ahm38ahf1td2e7t940e3r8os4ne.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "cat.copernic.ferranjuan.projectem07ferraniadrian",
+            "certificate_hash": "5530b4609a0d01485d71bd979ddca0dc39995d74"
+          }
+        },
+        {
           "client_id": "206569074543-2uet070hnqhcgbnsptn4ff5atdobpt8s.apps.googleusercontent.com",
           "client_type": 3
         }
