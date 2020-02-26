@@ -18,8 +18,10 @@ public class Albumes {
     public String title;
     private int imageResource;
     public Cancion cancion;
+    public String nom;
+    public String nomCanço;
 
-    public Albumes(String title, final int imageResource, Cancion cancion) {
+    public Albumes() {
         mAuth = FirebaseAuth.getInstance();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         myRef = database.getReference( "albums/"+mAuth.getUid());
@@ -28,8 +30,8 @@ public class Albumes {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 //dataSnapshot viene de leer "usuarios/" + user.getUid() + "/comidas"
                 for (DataSnapshot datos : dataSnapshot.getChildren()) {
-                    String nom = datos.child("nom").getValue(String.class);
-                    String nomCanço = datos.child("nomCanço").getValue(String.class);
+                    nom = datos.child("nom").getValue(String.class);
+                     nomCanço = datos.child("nomCanço").getValue(String.class);
                     int img = datos.child("img").getValue(Integer.class);
                     int canço = datos.child("canço").getValue(Integer.class);
 
@@ -43,12 +45,11 @@ public class Albumes {
 
             }
         });
-        this.title = title ;
-        this.imageResource = imageResource;
-        this.cancion = cancion;
+
+
     }
     public String getTitle() {
-        return title;
+        return nom;
     }
 
     public int getImageResource() {
