@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -79,10 +78,10 @@ public class HomeFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        afegirAlbums();
+        //afegirAlbums();
     }
 
-    private void afegirAlbums() {
+    /*private void afegirAlbums() {
         mAuth = FirebaseAuth.getInstance();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         myRef = database.getReference("albums/"+mAuth.getUid()+"/album1/");
@@ -96,7 +95,7 @@ public class HomeFragment extends Fragment {
         myRef.child("img").setValue(R.drawable.theslip);
         myRef.child("nomCanço").setValue("Head Down");
         myRef.child("canço").setValue(R.raw.head_down);
-    }
+    }*/
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -114,12 +113,12 @@ public class HomeFragment extends Fragment {
         mRecyclerView.setAdapter(mAdapter);
 
         // Inflate the layout for this fragment
-        if(spinneroder.getSelectedItem().toString().equals(R.string.orderza) ){
+        /*if(spinneroder.getSelectedItem().toString().equals(R.string.orderza) ){
         initializeDataza();}
         else if(spinneroder.getSelectedItem().toString().equals(R.string.orderaz)){
             initializeDataaz();}
         else {
-            initializeData();}
+            initializeData();}*/
         return rootView;
 
 
@@ -137,16 +136,16 @@ public class HomeFragment extends Fragment {
 
     private void initializeData() {
 
-        mAlbumesData.add(new Albumes("Ghosts I–IV", R.drawable.ghostsi_iv, new Albumes.Cancion("Ghosts I",R.raw.ghosts_i)));
-        mAlbumesData.add(new Albumes("The Slip", R.drawable.theslip, new Albumes.Cancion("Head Down", R.raw.head_down)));
-        mAlbumesData.add(new Albumes("No Nations", R.drawable.nonations, new Albumes.Cancion("I Should Be Born", R.raw.i_should_be_born)));
+        mAlbumesData.add(new Albumes());
+        mAlbumesData.add(new Albumes());
+        /*mAlbumesData.add(new Albumes("No Nations", R.drawable.nonations, new Albumes.Cancion("I Should Be Born", R.raw.i_should_be_born)));
         mAlbumesData.add(new Albumes("Goverment Plates", R.drawable.governmentplates, new Albumes.Cancion("Birds", R.raw.birds)));
         mAlbumesData.add(new Albumes("The Fall", R.drawable.thefall, new Albumes.Cancion("Detroit", R.raw.detroit)));
         mAlbumesData.add(new Albumes("The Wired CD", R.drawable.wired, new Albumes.Cancion("Now Get Busy", R.raw.now_get_busy)));
         mAlbumesData.add(new Albumes("No Love Deep Web", R.drawable.nolovedeepweb, new Albumes.Cancion("Come Up and Get Me", R.raw.come_up_and_g)));
-        mAlbumesData.add(new Albumes("The Powers That B", R.drawable.thepowersthatb, new Albumes.Cancion("Up My Sleeves", R.raw.up_my_sleevesw)));
+        mAlbumesData.add(new Albumes("The Powers That B", R.drawable.thepowersthatb, new Albumes.Cancion("Up My Sleeves", R.raw.up_my_sleevesw)));*/
     }
-    private void initializeDataaz() {
+    /*private void initializeDataaz() {
 
         mAlbumesData.add(new Albumes("Ghosts I–IV", R.drawable.ghostsi_iv, new Albumes.Cancion("Ghosts I",R.raw.ghosts_i)));
         mAlbumesData.add(new Albumes("Goverment Plates", R.drawable.governmentplates, new Albumes.Cancion("Birds", R.raw.birds)));
@@ -167,7 +166,7 @@ public class HomeFragment extends Fragment {
         mAlbumesData.add(new Albumes("No Love Deep Web", R.drawable.nolovedeepweb, new Albumes.Cancion("Come Up and Get Me", R.raw.come_up_and_g)));
         mAlbumesData.add(new Albumes("Goverment Plates", R.drawable.governmentplates, new Albumes.Cancion("Birds", R.raw.birds)));
         mAlbumesData.add(new Albumes("Ghosts I–IV", R.drawable.ghostsi_iv, new Albumes.Cancion("Ghosts I",R.raw.ghosts_i)));
-    }
+    }*/
 
 
 

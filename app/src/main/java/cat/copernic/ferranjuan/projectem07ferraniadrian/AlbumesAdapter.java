@@ -71,15 +71,15 @@ public class AlbumesAdapter extends RecyclerView.Adapter<AlbumesAdapter.ViewHold
 
         @Override
         public void onClick(View v) {
-            Albumes currentSport = mAlbumesData.get(getAdapterPosition());
+            Albumes currentAlbum = mAlbumesData.get(getAdapterPosition());
             Intent detailIntent = new Intent(mContext, DetailActivity.class);
-            detailIntent.putExtra("title", currentSport.getTitle());
+            detailIntent.putExtra("title", currentAlbum.getTitle());
             detailIntent.putExtra("image_resource",
-                    currentSport.getImageResource());
+                    currentAlbum.getImageResource());
             detailIntent.putExtra("cancion_name",
-                    currentSport.getCancion().getNom());
+                    currentAlbum.getCancion().getNom());
             detailIntent.putExtra("cancion_file",
-                    currentSport.getCancion().getFile());
+                    currentAlbum.getCancion().getFile());
             mContext.startActivity(detailIntent);
         }
     }
