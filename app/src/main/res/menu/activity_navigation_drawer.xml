@@ -9,30 +9,13 @@
             android:icon="@drawable/house"
             android:title="@string/Inici" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/album"
-            android:title="@string/Albums" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/guitar"
-            android:title="@string/Categories" />
-        <item
             android:id="@+id/nav_tools"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@android:drawable/ic_dialog_info"
             android:title="@string/menu_tools" />
+        <item
+            android:id="@+id/nav_perfil"
+            android:icon="@drawable/profile"
+            android:title="@string/menu_perfilusuari" />
     </group>
-
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="@string/menu_perfilusuari" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/menu_send" />
-        </menu>
-    </item>
 
 </menu>

@@ -78,7 +78,7 @@
         <item>@string/en</item>
     </string-array>
     <string name="mujer">Dona</string>
-    <string name="menu_tools">Configuració</string>
+    <string name="menu_tools">Llicència</string>
     <string name="tvIdiomas" tools:ignore="DuplicateDefinition">Selecciona l\'idioma:</string>
     <string name="orderza" tools:ignore="DuplicateDefinition">Ordena de la Z a la A</string>
     <string name="orderaz" tools:ignore="DuplicateDefinition">Ordena de la A a la Z</string>
@@ -106,5 +106,6 @@
     <string name="registreCorrecte">S\'ha registrat correctament</string>
     <string name="Email">Email</string>
     <string name="contrasenaIncorrecta">La contrassenya ha de ser mínim de 6 caracters</string>
+    <string name="tvLlicència">Cliqueu aquí per a veure la llicència que utilitza aqusta app</string>
 
 </resources>

@@ -30,7 +30,7 @@
     <string name="menu_perfilusuari">Perfil de usuario</string>
     <string name="menu_send">.</string>
     <string name="menu_slideshow">.</string>
-    <string name="menu_tools">Configuración</string>
+    <string name="menu_tools">Licencia</string>
     <string name="mssgsaveduser">Datos del usuario guardados</string>
     <string name="mujer">Mujer</string>
     <string name="nav_header_desc">.</string>
@@ -66,4 +66,5 @@
     <string name="registreCorrecte">Se ha registrado correctamente</string>
     <string name="Email">Email</string>
     <string name="contrasenaIncorrecta">La contraseña tiene que ser de un mínimo de 6 caracteres</string>
+    <string name="tvLlicència">Cliqueu aquí per a veure la llicència que utilitza aqusta app</string>
 </resources>

@@ -14,9 +14,9 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 
 public class AlbumesAdapter extends RecyclerView.Adapter<AlbumesAdapter.ViewHolder> {
-    private ArrayList<Albumes> mAlbumesData;
+    private ArrayList<Album> mAlbumesData;
     private Context mContext;
-    public AlbumesAdapter(Context context, ArrayList<Albumes> albumesData) {
+    public AlbumesAdapter(Context context, ArrayList<Album> albumesData) {
         this.mAlbumesData = albumesData;
         this.mContext = context;
     }
@@ -30,7 +30,7 @@ public class AlbumesAdapter extends RecyclerView.Adapter<AlbumesAdapter.ViewHold
     public void onBindViewHolder(AlbumesAdapter.ViewHolder holder,
                                  int position) {
         // Get current sport.
-        Albumes currentAlbum = mAlbumesData.get(position);
+        Album currentAlbum = mAlbumesData.get(position);
 
         // Populate the textviews with data.
         holder.bindTo(currentAlbum);
@@ -61,25 +61,25 @@ public class AlbumesAdapter extends RecyclerView.Adapter<AlbumesAdapter.ViewHold
             itemView.setOnClickListener(this);
         }
 
-        void bindTo(Albumes currentAlbum){
+        void bindTo(Album currentAlbum){
             // Populate the textviews with data.
-            mTitleText.setText(currentAlbum.getTitle());
-            Glide.with(mContext).load(currentAlbum.getImageResource()).into(mSportsImage);
+            mTitleText.setText(currentAlbum.getNom());
+            Glide.with(mContext).load(currentAlbum.getImg()).into(mSportsImage);
 
         }
 
 
         @Override
         public void onClick(View v) {
-            Albumes currentAlbum = mAlbumesData.get(getAdapterPosition());
+            Album currentAlbum = mAlbumesData.get(getAdapterPosition());
             Intent detailIntent = new Intent(mContext, DetailActivity.class);
-            detailIntent.putExtra("title", currentAlbum.getTitle());
+            detailIntent.putExtra("title", currentAlbum.getNom());
             detailIntent.putExtra("image_resource",
-                    currentAlbum.getImageResource());
+                    currentAlbum.getImg());
             detailIntent.putExtra("cancion_name",
-                    currentAlbum.getCancion().getNom());
+                    currentAlbum.getNomCanço());
             detailIntent.putExtra("cancion_file",
-                    currentAlbum.getCancion().getFile());
+                    currentAlbum.getCanço());
             mContext.startActivity(detailIntent);
         }
     }

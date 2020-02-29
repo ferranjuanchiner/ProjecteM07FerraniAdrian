@@ -26,7 +26,7 @@ import cat.copernic.ferranjuan.projectem07ferraniadrian.ui.send.PerfilFragment;
 public class NavigationActivity extends AppCompatActivity
     implements
         NavigationView.OnNavigationItemSelectedListener,
-        AlbumesFragment.OnFragmentInteractionListener,CategoriasFragment.OnFragmentInteractionListener,HomeFragment.OnFragmentInteractionListener {
+        HomeFragment.OnFragmentInteractionListener {
     private AppBarConfiguration mAppBarConfiguration;
     String username;
 
@@ -60,8 +60,7 @@ public class NavigationActivity extends AppCompatActivity
         // menu should be considered as top level destinations.
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
-                R.id.nav_tools, R.id.nav_share, R.id.nav_send)
+                R.id.nav_home, R.id.nav_tools, R.id.nav_perfil)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -98,19 +97,7 @@ public class NavigationActivity extends AppCompatActivity
                 title = "Inici";
 
                 break;
-            case R.id.nav_gallery:
-
-                fragment = new CategoriasFragment();
-                title = "Categories";
-
-                break;
-            case R.id.nav_slideshow:
-
-                fragment = new AlbumesFragment();
-                title = "Albums";
-
-                break;
-           case R.id.nav_share:
+           case R.id.nav_perfil:
                 fragment = new PerfilFragment();
         }
         if (fragment != null) {

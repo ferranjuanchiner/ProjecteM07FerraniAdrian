@@ -2,21 +2,27 @@ package cat.copernic.ferranjuan.projectem07ferraniadrian.ui.home;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Spinner;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-import cat.copernic.ferranjuan.projectem07ferraniadrian.Albumes;
+import cat.copernic.ferranjuan.projectem07ferraniadrian.Album;
 import cat.copernic.ferranjuan.projectem07ferraniadrian.AlbumesAdapter;
 import cat.copernic.ferranjuan.projectem07ferraniadrian.R;
 
@@ -32,7 +38,7 @@ import cat.copernic.ferranjuan.projectem07ferraniadrian.R;
 public class HomeFragment extends Fragment {
     private HomeViewModel homeViewModel;
     private RecyclerView mRecyclerView;
-    private ArrayList<Albumes> mAlbumesData;
+    private ArrayList<Album> mAlbumesData;
     private AlbumesAdapter mAdapter;
     Spinner spinneroder;
     // TODO: Rename parameter arguments, choose names that match
@@ -78,23 +84,59 @@ public class HomeFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-        //afegirAlbums();
+       // afegirAlbums();
     }
 
     /*private void afegirAlbums() {
         mAuth = FirebaseAuth.getInstance();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        myRef = database.getReference("albums/"+mAuth.getUid()+"/album1/");
+        myRef = database.getReference("albums/"+"/album1/");
         myRef.child("nom").setValue("Ghosts I–IV");
         myRef.child("img").setValue(R.drawable.ghostsi_iv);
         myRef.child("nomCanço").setValue("Ghosts I");
         myRef.child("canço").setValue(R.raw.ghosts_i);
 
-        myRef = database.getReference("albums/"+mAuth.getUid()+"/album2/");
+        myRef = database.getReference("albums/"+"/album2/");
         myRef.child("nom").setValue("The Slip");
         myRef.child("img").setValue(R.drawable.theslip);
         myRef.child("nomCanço").setValue("Head Down");
         myRef.child("canço").setValue(R.raw.head_down);
+
+        myRef = database.getReference("albums/"+"/album3/");
+        myRef.child("nom").setValue("No Nations");
+        myRef.child("img").setValue(R.drawable.nonations);
+        myRef.child("nomCanço").setValue("I Should Be Born");
+        myRef.child("canço").setValue(R.raw.i_should_be_born);
+
+        myRef = database.getReference("albums/"+"/album4/");
+        myRef.child("nom").setValue("Goverment Plates");
+        myRef.child("img").setValue(R.drawable.governmentplates);
+        myRef.child("nomCanço").setValue("Birds");
+        myRef.child("canço").setValue(R.raw.birds);
+
+        myRef = database.getReference("albums/"+"/album5/");
+        myRef.child("nom").setValue("The Fall");
+        myRef.child("img").setValue(R.drawable.thefall);
+        myRef.child("nomCanço").setValue("Detroit");
+        myRef.child("canço").setValue(R.raw.detroit);
+
+        myRef = database.getReference("albums/"+"/album6/");
+        myRef.child("nom").setValue("The Wired CD");
+        myRef.child("img").setValue(R.drawable.wired);
+        myRef.child("nomCanço").setValue("Now Get Busy");
+        myRef.child("canço").setValue(R.raw.now_get_busy);
+
+        myRef = database.getReference("albums/"+"/album7/");
+        myRef.child("nom").setValue("No Love Deep Web");
+        myRef.child("img").setValue(R.drawable.nolovedeepweb);
+        myRef.child("nomCanço").setValue("Come Up And Get Me");
+        myRef.child("canço").setValue(R.raw.come_up_and_g);
+
+        myRef = database.getReference("albums/"+"/album8/");
+        myRef.child("nom").setValue("The powers that b");
+        myRef.child("img").setValue(R.drawable.thepowersthatb);
+        myRef.child("nomCanço").setValue("Up my Sleeves");
+        myRef.child("canço").setValue(R.raw.up_my_sleevesw);
     }*/
 
     @Override
@@ -111,7 +153,7 @@ public class HomeFragment extends Fragment {
         mAlbumesData = new ArrayList<>();
         mAdapter = new AlbumesAdapter(getActivity(), mAlbumesData);
         mRecyclerView.setAdapter(mAdapter);
-
+        initializeData();
         // Inflate the layout for this fragment
         /*if(spinneroder.getSelectedItem().toString().equals(R.string.orderza) ){
         initializeDataza();}
@@ -135,37 +177,63 @@ public class HomeFragment extends Fragment {
     }
 
     private void initializeData() {
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        myRef = database.getReference( "albums/");
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                //dataSnapshot viene de leer "usuarios/" + user.getUid() + "/comidas"
+                for (DataSnapshot datos : dataSnapshot.getChildren())
+                {
 
-        mAlbumesData.add(new Albumes());
-        mAlbumesData.add(new Albumes());
-        /*mAlbumesData.add(new Albumes("No Nations", R.drawable.nonations, new Albumes.Cancion("I Should Be Born", R.raw.i_should_be_born)));
-        mAlbumesData.add(new Albumes("Goverment Plates", R.drawable.governmentplates, new Albumes.Cancion("Birds", R.raw.birds)));
-        mAlbumesData.add(new Albumes("The Fall", R.drawable.thefall, new Albumes.Cancion("Detroit", R.raw.detroit)));
-        mAlbumesData.add(new Albumes("The Wired CD", R.drawable.wired, new Albumes.Cancion("Now Get Busy", R.raw.now_get_busy)));
-        mAlbumesData.add(new Albumes("No Love Deep Web", R.drawable.nolovedeepweb, new Albumes.Cancion("Come Up and Get Me", R.raw.come_up_and_g)));
-        mAlbumesData.add(new Albumes("The Powers That B", R.drawable.thepowersthatb, new Albumes.Cancion("Up My Sleeves", R.raw.up_my_sleevesw)));*/
+                    String nombd = datos.child("nom").getValue(String.class);
+                    String nomCançobd = datos.child("nomCanço").getValue(String.class);
+                    int imgbd = datos.child("img").getValue(Integer.class);
+                    int cançobd = datos.child("canço").getValue(Integer.class);
+                    mAlbumesData.add(new Album(nombd,imgbd,nomCançobd,cançobd));
+                }
+                mAdapter = new AlbumesAdapter(getActivity(), mAlbumesData);
+                mRecyclerView.setAdapter(mAdapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Failed to read value
+                Log.w("perfil", "Failed to read value.", databaseError.toException());
+
+            }
+        });
+
+
+        /*mAlbumesData.add(new Album("No Nations", R.drawable.nonations, new Album.Cancion("I Should Be Born", R.raw.i_should_be_born)));
+        mAlbumesData.add(new Album("Goverment Plates", R.drawable.governmentplates, new Album.Cancion("Birds", R.raw.birds)));
+        mAlbumesData.add(new Album("The Fall", R.drawable.thefall, new Album.Cancion("Detroit", R.raw.detroit)));
+        mAlbumesData.add(new Album("The Wired CD", R.drawable.wired, new Album.Cancion("Now Get Busy", R.raw.now_get_busy)));
+        mAlbumesData.add(new Album("No Love Deep Web", R.drawable.nolovedeepweb, new Album.Cancion("Come Up and Get Me", R.raw.come_up_and_g)));
+        mAlbumesData.add(new Album("The Powers That B", R.drawable.thepowersthatb, new Album.Cancion("Up My Sleeves", R.raw.up_my_sleevesw)));*/
     }
     /*private void initializeDataaz() {
 
-        mAlbumesData.add(new Albumes("Ghosts I–IV", R.drawable.ghostsi_iv, new Albumes.Cancion("Ghosts I",R.raw.ghosts_i)));
-        mAlbumesData.add(new Albumes("Goverment Plates", R.drawable.governmentplates, new Albumes.Cancion("Birds", R.raw.birds)));
-        mAlbumesData.add(new Albumes("No Love Deep Web", R.drawable.nolovedeepweb, new Albumes.Cancion("Come Up and Get Me", R.raw.come_up_and_g)));
-        mAlbumesData.add(new Albumes("No Nations", R.drawable.nonations, new Albumes.Cancion("I Should Be Born", R.raw.i_should_be_born)));
-        mAlbumesData.add(new Albumes("The Fall", R.drawable.thefall, new Albumes.Cancion("Detroit", R.raw.detroit)));
-        mAlbumesData.add(new Albumes("The Powers That B", R.drawable.thepowersthatb, new Albumes.Cancion("Up My Sleeves", R.raw.up_my_sleevesw)));
-        mAlbumesData.add(new Albumes("The Slip", R.drawable.theslip, new Albumes.Cancion("Head Down", R.raw.head_down)));
-        mAlbumesData.add(new Albumes("The Wired CD", R.drawable.wired, new Albumes.Cancion("Now Get Busy", R.raw.now_get_busy)));
+        mAlbumesData.add(new Album("Ghosts I–IV", R.drawable.ghostsi_iv, new Album.Cancion("Ghosts I",R.raw.ghosts_i)));
+        mAlbumesData.add(new Album("Goverment Plates", R.drawable.governmentplates, new Album.Cancion("Birds", R.raw.birds)));
+        mAlbumesData.add(new Album("No Love Deep Web", R.drawable.nolovedeepweb, new Album.Cancion("Come Up and Get Me", R.raw.come_up_and_g)));
+        mAlbumesData.add(new Album("No Nations", R.drawable.nonations, new Album.Cancion("I Should Be Born", R.raw.i_should_be_born)));
+        mAlbumesData.add(new Album("The Fall", R.drawable.thefall, new Album.Cancion("Detroit", R.raw.detroit)));
+        mAlbumesData.add(new Album("The Powers That B", R.drawable.thepowersthatb, new Album.Cancion("Up My Sleeves", R.raw.up_my_sleevesw)));
+        mAlbumesData.add(new Album("The Slip", R.drawable.theslip, new Album.Cancion("Head Down", R.raw.head_down)));
+        mAlbumesData.add(new Album("The Wired CD", R.drawable.wired, new Album.Cancion("Now Get Busy", R.raw.now_get_busy)));
     }
     private void initializeDataza() {
 
-        mAlbumesData.add(new Albumes("The Wired CD", R.drawable.wired, new Albumes.Cancion("Now Get Busy", R.raw.now_get_busy)));
-        mAlbumesData.add(new Albumes("The Slip", R.drawable.theslip, new Albumes.Cancion("Head Down", R.raw.head_down)));
-        mAlbumesData.add(new Albumes("The Powers That B", R.drawable.thepowersthatb, new Albumes.Cancion("Up My Sleeves", R.raw.up_my_sleevesw)));
-        mAlbumesData.add(new Albumes("The Fall", R.drawable.thefall, new Albumes.Cancion("Detroit", R.raw.detroit)));
-        mAlbumesData.add(new Albumes("No Nations", R.drawable.nonations, new Albumes.Cancion("I Should Be Born", R.raw.i_should_be_born)));
-        mAlbumesData.add(new Albumes("No Love Deep Web", R.drawable.nolovedeepweb, new Albumes.Cancion("Come Up and Get Me", R.raw.come_up_and_g)));
-        mAlbumesData.add(new Albumes("Goverment Plates", R.drawable.governmentplates, new Albumes.Cancion("Birds", R.raw.birds)));
-        mAlbumesData.add(new Albumes("Ghosts I–IV", R.drawable.ghostsi_iv, new Albumes.Cancion("Ghosts I",R.raw.ghosts_i)));
+        mAlbumesData.add(new Album("The Wired CD", R.drawable.wired, new Album.Cancion("Now Get Busy", R.raw.now_get_busy)));
+        mAlbumesData.add(new Album("The Slip", R.drawable.theslip, new Album.Cancion("Head Down", R.raw.head_down)));
+        mAlbumesData.add(new Album("The Powers That B", R.drawable.thepowersthatb, new Album.Cancion("Up My Sleeves", R.raw.up_my_sleevesw)));
+        mAlbumesData.add(new Album("The Fall", R.drawable.thefall, new Album.Cancion("Detroit", R.raw.detroit)));
+        mAlbumesData.add(new Album("No Nations", R.drawable.nonations, new Album.Cancion("I Should Be Born", R.raw.i_should_be_born)));
+        mAlbumesData.add(new Album("No Love Deep Web", R.drawable.nolovedeepweb, new Album.Cancion("Come Up and Get Me", R.raw.come_up_and_g)));
+        mAlbumesData.add(new Album("Goverment Plates", R.drawable.governmentplates, new Album.Cancion("Birds", R.raw.birds)));
+        mAlbumesData.add(new Album("Ghosts I–IV", R.drawable.ghostsi_iv, new Album.Cancion("Ghosts I",R.raw.ghosts_i)));
     }*/
 
 
