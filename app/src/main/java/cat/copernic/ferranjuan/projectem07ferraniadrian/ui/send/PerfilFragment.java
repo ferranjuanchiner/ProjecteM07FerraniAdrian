@@ -76,7 +76,7 @@ public class PerfilFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 //dataSnapshot viene de leer "usuarios/" + user.getUid() + "/comidas"
                 for (DataSnapshot datos : dataSnapshot.getChildren()) {
-                   String cognom = datos.child("cognom").getValue(String.class);
+                    String cognom = datos.child("cognom").getValue(String.class);
                     String email = datos.child("email").getValue(String.class);
                     String genere = datos.child("genere").getValue(String.class);
                     String nombre = datos.child("nombre").getValue(String.class);
@@ -88,7 +88,7 @@ public class PerfilFragment extends Fragment {
                     mailbd.setText(email);
                     generebd.setText(genere);
                 }
-                
+
             }
 
             @Override
