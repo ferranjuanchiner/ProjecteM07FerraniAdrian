@@ -175,6 +175,8 @@ public class Register extends AppCompatActivity {
         Map<String, Object> datosUsuario = new HashMap<>();
         datosUsuario.put("nombre",nom.getText().toString());
         datosUsuario.put("cognom",cognom.getText().toString());
+        datosUsuario.put("email",email.getText().toString());
+        datosUsuario.put("usuari",usuario.getText().toString());
         datosUsuario.put("genere",rb.getText().toString());
         myRef.child("datos").push().setValue(datosUsuario);
 

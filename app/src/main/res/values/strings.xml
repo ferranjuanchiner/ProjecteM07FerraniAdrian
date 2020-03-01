@@ -107,5 +107,9 @@
     <string name="Email">Email</string>
     <string name="contrasenaIncorrecta">La contrassenya ha de ser mínim de 6 caracters</string>
     <string name="tvLlicència">Cliqueu aquí per a veure la llicència que utilitza aqusta app</string>
+    <string name="tvText">La nostra app utilitza una llicència oberta sense obra derivada. A més, totes les imatges i cançons que utilitzem son agafades de internet i totes tenen llicència creative commons.</string>
+    <string name="ttlPerfil">Perfil Usuari</string>
+    <string name="ttlLlicència">Llicència</string>
+    <string name="ttlInici">Inici</string>
 
 </resources>

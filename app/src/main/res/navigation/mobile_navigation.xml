@@ -31,13 +31,8 @@
 
     <fragment
         android:id="@+id/nav_perfil"
-        android:name="cat.copernic.ferranjuan.projectem07ferraniadrian.ui.share.ShareFragment"
+        android:name="cat.copernic.ferranjuan.projectem07ferraniadrian.ui.send.PerfilFragment"
         android:label="@string/menu_perfilusuari"
         tools:layout="@layout/fragment_perfil" />
 
-    <fragment
-        android:id="@+id/nav_send"
-        android:name="cat.copernic.ferranjuan.projectem07ferraniadrian.ui.send.PerfilFragment"
-        android:label="@string/menu_send"
-        tools:layout="@layout/fragment_send" />
 </navigation>

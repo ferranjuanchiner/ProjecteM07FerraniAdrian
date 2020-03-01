@@ -22,6 +22,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import cat.copernic.ferranjuan.projectem07ferraniadrian.ui.home.HomeFragment;
 import cat.copernic.ferranjuan.projectem07ferraniadrian.ui.send.PerfilFragment;
+import cat.copernic.ferranjuan.projectem07ferraniadrian.ui.tools.ToolsFragment;
 
 public class NavigationActivity extends AppCompatActivity
     implements
@@ -94,11 +95,16 @@ public class NavigationActivity extends AppCompatActivity
        switch (viewId) {
             case R.id.nav_home:
                 fragment = new HomeFragment();
-                title = "Inici";
+                title = String.valueOf(R.string.ttlInici);
 
                 break;
+           case R.id.nav_tools:
+               fragment = new ToolsFragment();
+               title = String.valueOf(R.string.ttlLlicència);
+               break;
            case R.id.nav_perfil:
                 fragment = new PerfilFragment();
+                title = String.valueOf(R.string.ttlPerfil);
         }
         if (fragment != null) {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
