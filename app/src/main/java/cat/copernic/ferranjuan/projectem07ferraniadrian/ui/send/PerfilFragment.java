@@ -6,8 +6,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.Switch;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -34,12 +34,8 @@ public class PerfilFragment extends Fragment {
     DatabaseReference myRef;
     private FirebaseAuth mAuth;
     FirebaseUser user;
-    TextView nom,cognom,mail,genere,usuari;
-    public String nombd;
-    public String cognombd;
-    public String usuaribd;
-    public String mailbd;
-    public String generebd;
+    public EditText nombd,cognombd,mailbd,generebd,usuaribd;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -50,11 +46,11 @@ public class PerfilFragment extends Fragment {
                 ViewModelProviders.of(this).get(SendViewModel.class);
         View root = inflater.inflate(R.layout.fragment_perfil, container, false);
         //final TextView textView = root.findViewById(R.id.text_send);
-        nom = root.findViewById(R.id.tvNomBd);
-        cognom = root.findViewById(R.id.tvCognomBD);
-        usuari = root.findViewById(R.id.tvUsuariBD);
-        mail = root.findViewById(R.id.tvEmailBD);
-        genere = root.findViewById(R.id.tvGenereBD);
+        nombd = root.findViewById(R.id.tvNomBd);
+        cognombd = root.findViewById(R.id.tvCognomBD);
+        usuaribd = root.findViewById(R.id.tvUsuariBD);
+        mailbd = root.findViewById(R.id.tvEmailBD);
+        generebd = root.findViewById(R.id.tvGenereBD);
         sendViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
@@ -64,6 +60,11 @@ public class PerfilFragment extends Fragment {
         espanol = root.getResources().getString(R.string.es);
         sw = root.findViewById(R.id.swColor);
 
+        inicialitzaDades();
+        return root;
+    }
+
+    private void inicialitzaDades() {
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
 
@@ -75,20 +76,19 @@ public class PerfilFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 //dataSnapshot viene de leer "usuarios/" + user.getUid() + "/comidas"
                 for (DataSnapshot datos : dataSnapshot.getChildren()) {
-                    cognombd = datos.child("cognom").getValue().toString();
-                    mailbd = datos.child("email").getValue().toString();
-                    generebd = datos.child("genere").getValue().toString();
-                    nombd = datos.child("nombre").getValue().toString();
-                    usuaribd = datos.child("usuari").getValue().toString();
-                    
-                    nom.setText(nombd);
-                    cognom.setText(cognombd);
-                    usuari.setText(usuaribd);
-                    mail.setText(mailbd);
-                    genere.setText(generebd);
+                   String cognom = datos.child("cognom").getValue(String.class);
+                    String email = datos.child("email").getValue(String.class);
+                    String genere = datos.child("genere").getValue(String.class);
+                    String nombre = datos.child("nombre").getValue(String.class);
+                    String usuari = datos.child("usuari").getValue(String.class);
 
+                    nombd.setText(nombre);
+                    cognombd.setText(cognom);
+                    usuaribd.setText(usuari);
+                    mailbd.setText(email);
+                    generebd.setText(genere);
                 }
-
+                
             }
 
             @Override
@@ -99,7 +99,6 @@ public class PerfilFragment extends Fragment {
 
             }
         });
-        return root;
     }
 
     public void onClick(View view) {

@@ -93,42 +93,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvUsuari" />
 
-    <TextView
+    <EditText
         android:id="@+id/tvNomBd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="70dp"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="20dp"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/tvNom"
         app:layout_constraintTop_toBottomOf="@+id/tvSwitch" />
 
-    <TextView
+    <EditText
         android:id="@+id/tvCognomBD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="31dp"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="20dp"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/tvCognom"
         app:layout_constraintTop_toBottomOf="@+id/tvNomBd" />
 
-    <TextView
+    <EditText
         android:id="@+id/tvUsuariBD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="47dp"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="15dp"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/tvUsuari"
         app:layout_constraintTop_toBottomOf="@+id/tvCognomBD" />
 
-    <TextView
+    <EditText
         android:id="@+id/tvEmailBD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="63dp"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="15dp"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/tvMail"
         app:layout_constraintTop_toBottomOf="@+id/tvUsuariBD" />
@@ -145,12 +145,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvMail" />
 
-    <TextView
+    <EditText
         android:id="@+id/tvGenereBD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="20dp"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/tvGenere"
         app:layout_constraintTop_toBottomOf="@+id/tvEmailBD" />
