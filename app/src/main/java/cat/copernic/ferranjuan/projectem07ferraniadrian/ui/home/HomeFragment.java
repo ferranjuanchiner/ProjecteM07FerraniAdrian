@@ -206,13 +206,17 @@ public class HomeFragment extends Fragment {
         });
 
 
-        /*mAlbumesData.add(new Album("No Nations", R.drawable.nonations, new Album.Cancion("I Should Be Born", R.raw.i_should_be_born)));
-        mAlbumesData.add(new Album("Goverment Plates", R.drawable.governmentplates, new Album.Cancion("Birds", R.raw.birds)));
-        mAlbumesData.add(new Album("The Fall", R.drawable.thefall, new Album.Cancion("Detroit", R.raw.detroit)));
-        mAlbumesData.add(new Album("The Wired CD", R.drawable.wired, new Album.Cancion("Now Get Busy", R.raw.now_get_busy)));
-        mAlbumesData.add(new Album("No Love Deep Web", R.drawable.nolovedeepweb, new Album.Cancion("Come Up and Get Me", R.raw.come_up_and_g)));
-        mAlbumesData.add(new Album("The Powers That B", R.drawable.thepowersthatb, new Album.Cancion("Up My Sleeves", R.raw.up_my_sleevesw)));*/
+      /*  mAlbumesData.add(new Album("Ghosts I-IV", R.drawable.ghostsi_iv, "Ghosts I", R.raw.ghosts_i));
+        mAlbumesData.add(new Album("The Slip", R.drawable.theslip, "Head Down", R.raw.head_down));
+        mAlbumesData.add(new Album("No Nations", R.drawable.nonations, "I Should Be Born", R.raw.i_should_be_born));
+        mAlbumesData.add(new Album("Goverment Plates", R.drawable.governmentplates, "Birds", R.raw.birds));
+        mAlbumesData.add(new Album("The Fall", R.drawable.thefall, "Detroit", R.raw.detroit));
+        mAlbumesData.add(new Album("The Wired CD", R.drawable.wired, "Now Get Busy", R.raw.now_get_busy));
+        mAlbumesData.add(new Album("No Love Deep Web", R.drawable.nolovedeepweb, "Come Up and Get Me", R.raw.come_up_and_g));
+        mAlbumesData.add(new Album("The Powers That B", R.drawable.thepowersthatb, "Up My Sleeves", R.raw.up_my_sleevesw));
+    */
     }
+
     /*private void initializeDataaz() {
 
         mAlbumesData.add(new Album("Ghosts I–IV", R.drawable.ghostsi_iv, new Album.Cancion("Ghosts I",R.raw.ghosts_i)));
