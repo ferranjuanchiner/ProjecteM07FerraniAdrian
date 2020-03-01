@@ -82,11 +82,11 @@ public class PerfilFragment extends Fragment {
                     String nombre = datos.child("nombre").getValue(String.class);
                     String usuari = datos.child("usuari").getValue(String.class);
 
-                    nombd.setText(nombre);
-                    cognombd.setText(cognom);
-                    usuaribd.setText(usuari);
-                    mailbd.setText(email);
-                    generebd.setText(genere);
+                    nombd.setText(datos.child("nombre").getValue(String.class));
+                    cognombd.setText(datos.child("cognom").getValue(String.class));
+                    usuaribd.setText(datos.child("usuari").getValue(String.class));
+                    mailbd.setText(datos.child("email").getValue(String.class));
+                    generebd.setText(datos.child("genere").getValue(String.class));
                 }
 
             }
