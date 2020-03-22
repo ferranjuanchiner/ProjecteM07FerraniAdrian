@@ -69,8 +69,8 @@ public class PerfilFragment extends Fragment {
         user = mAuth.getCurrentUser();
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        myRef = database.getReference( "usuarios/");
-        myRef.orderByChild("email").equalTo(user.getEmail()).addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef = database.getReference( "usuarios/" + mAuth.getUid());
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
 
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

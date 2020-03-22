@@ -20,17 +20,14 @@
     android:layout_height="160dp"
     android:layout_margin="8dp"
     app:cardElevation="5dp">
-
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
         <ImageView
             android:id="@+id/album_images"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true" />
-
         <TextView
             android:id="@+id/title"
             style="@style/TextAppearance.AppCompat.Headline"
@@ -41,7 +38,5 @@
             android:padding="8dp"
             android:text="@string/title_placeholder"
             android:theme="@style/ThemeOverlay.AppCompat.Dark" />
-
-
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
