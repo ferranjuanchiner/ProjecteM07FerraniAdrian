@@ -84,10 +84,10 @@ public class HomeFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-       // afegirAlbums();
+       afegirAlbums();
     }
 
-    /*private void afegirAlbums() {
+    private void afegirAlbums() {
         mAuth = FirebaseAuth.getInstance();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         myRef = database.getReference("albums/"+"/album1/");
@@ -137,7 +137,13 @@ public class HomeFragment extends Fragment {
         myRef.child("img").setValue(R.drawable.thepowersthatb);
         myRef.child("nomCanço").setValue("Up my Sleeves");
         myRef.child("canço").setValue(R.raw.up_my_sleevesw);
-    }*/
+
+        myRef = database.getReference("albums/"+"/album9/");
+        myRef.child("nom").setValue("Yellow Submarine");
+        myRef.child("img").setValue(R.drawable.yellowsubmarine);
+        myRef.child("nomCanço").setValue("Hey Bulldog");
+        myRef.child("canço").setValue(R.raw.hey_bulldog);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -187,7 +193,7 @@ public class HomeFragment extends Fragment {
                 for (DataSnapshot datos : dataSnapshot.getChildren())
                 {
 
-                    String nombd = datos.child("nom").getValue(String.class);
+                    String nombd = datos.child("").child("").getValue(String.class);
                     String nomCançobd = datos.child("nomCanço").getValue(String.class);
                     int imgbd = datos.child("img").getValue(Integer.class);
                     int cançobd = datos.child("canço").getValue(Integer.class);
